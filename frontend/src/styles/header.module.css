@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 1000;
+    font-size: 14px;
+ }
+
+
+
+
+
+@media screen and (min-width: 822px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0);
+        color: #000000;
+        transition: 0.6s ease;
+    }
+    
+    header:hover {
+        transition: 0.6s ease;
+    }
+    .logo {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+    }
+    .logo_list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .leftnav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+        padding-left: 170px;
+    }
+
+    .rightnav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+        padding-right: 170px;
+    }
+    .logo_list ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-right: 55px;
+        list-style: none;
+    }
+
+    .logo_list ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .logo_list ul li a:hover {
+        color: white;
+        text-decoration: none;
+    }
+    
+}
+
+@media screen and (min-width: 400px) and (max-width: 822px) {
+    header {
+        background-color: rgb(255, 54, 54) !important;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        margin: auto;
+        padding-left: 5%;
+    }
+    .logo_list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+    }
+
+    .leftnav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+        padding-left: 15px;
+
+    }
+
+    .rightnav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+        padding-right: 15px;
+
+    }
+    .logo_list ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-right: 17px;
+        list-style: none;
+    }
+
+    .logo_list ul li a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        padding-right: 10px;
+    }
+
+    .logo_list ul li a:hover {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    header {
+        background-color: black !important;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        margin: auto;
+        padding-left: 5%;
+    }
+    .logo_list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+        padding-left: 0px;
+
+    }
+
+    .leftnav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+        padding-left: 40px;
+
+    }
+
+    .rightnav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding-top: 3px;
+        padding-right: 40px;
+
+    }
+    .logo_list ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-right: 25px;
+        list-style: none;
+    }
+
+    .logo_list ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .logo_list ul li a:hover {
+        color: white;
+        text-decoration: none;
+    }
+}
+
