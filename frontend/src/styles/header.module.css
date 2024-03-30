@@ -10,7 +10,7 @@
 
 
 
-@media screen and (min-width: 822px) {
+@media screen and (min-width: 800px) {
     header {
         position: fixed;
         top: 0;
@@ -31,9 +31,17 @@
     }
     .logo {
         position: absolute;
-        width: 50px;
-        height: 50px;
+        padding-top: 3%;
+        width: 150px;
+        height: 150px;
+        margin-left: 10px;
+        transition: 0.6s ease;
     }
+
+    .logo:hover {
+        transition: 0.6s ease;
+    }
+
     .logo_list {
         display: flex;
         justify-content: center;
@@ -79,13 +87,15 @@
     
 }
 
-@media screen and (min-width: 400px) and (max-width: 822px) {
+@media screen and (min-width: 400px) and (max-width: 800px) {
     header {
         background-color: rgb(255, 54, 54) !important;
+        display: flex;
+        height: 12vh;
     }
     .logo {
-        width: 50px;
-        height: 50px;
+        width: auto;
+        height: 60%;
         display: flex;
         margin: auto;
         padding-left: 5%;

@@ -2,17 +2,27 @@ import axios from 'axios';
 import styles from '../styles/header.module.css';
 import companyLogo from '../static_files/logo.png';
 import { useState, useEffect } from 'react';
-import classNames from 'classnames/bind';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 
 export default function Header() {
     const [color, setColor] = useState("rgba(0, 0, 0, 0)");
+    const [logoWidth, setLogoWidth] = useState(150);
+    const [logoHeight, setLogoHeight] = useState(150);
+    const [logoPadding, setLogoPadding] = useState(5);
+
+
     const listenScrollEvent = event => {
         if (window.scrollY < 100) {
             setColor("rgba(0, 0, 0, 0)");
+            setLogoWidth(150);
+            setLogoHeight(150);
+            setLogoPadding(5);
         } else {
             setColor("rgb(0, 0, 0)");
+            setLogoWidth(50);
+            setLogoHeight(50);
+            setLogoPadding(0);
         }
     };
 
@@ -24,7 +34,7 @@ export default function Header() {
     return(
         <header className={styles.Header} style={{backgroundColor: color}}>
             <div className={styles.logo_list} >
-                <img className={styles.logo} src={companyLogo} alt="Logo"/>
+                <img className={styles.logo} src={companyLogo} alt="Logo" style={{width: logoWidth, height: logoHeight, paddingTop: logoPadding + "%"}}/>
                 <div className={styles.leftnav}>
                     <nav>
                         <ul>
