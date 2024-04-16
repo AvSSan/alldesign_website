@@ -1,0 +1,93 @@
+.portfolio_examples_card {
+    display:table;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    border-radius: 50px;
+
+}
+
+.image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 48%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-left: 2%;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 45%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    padding-right: 5%;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.place {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 20px;
+    background: #9e9e9e;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5%;
+    overflow: hidden;
+
+}
+
+.placeborder > {
+    font-size: 20px;
+}
+.place p {
+    position: relative;
+    padding-top: 10%;
+    font-size: 20px;
+} 
+    
+.title {
+    margin-bottom: 5%;
+}
+
+.task p {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.houseprops {
+    position: absolute;
+    bottom: 0;
+}
+
+.houseprops p {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #787886;
+}
