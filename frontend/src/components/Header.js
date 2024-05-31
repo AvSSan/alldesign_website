@@ -1,17 +1,13 @@
-import axios from 'axios';
-
 import styles from '../styles/header.module.css';
 import companyLogo from '../static_files/logo.png';
 import { useState, useEffect } from 'react';
 
-axios.defaults.baseURL = 'http://localhost:8000';
 
-export default function Header() {
+export default function Header({ scrollToPortfolio }) {
     const [color, setColor] = useState("rgba(0, 0, 0, 0)");
     const [logoWidth, setLogoWidth] = useState(150);
     const [logoHeight, setLogoHeight] = useState(150);
     const [logoTop, setLogoTop] = useState(5);
-
 
     const listenScrollEvent = event => {
         if (window.scrollY < 100) {
@@ -39,7 +35,7 @@ export default function Header() {
                 <div className={styles.leftnav}>
                     <nav>
                         <ul>
-                            <li><a href="#">РАБОТЫ</a></li>
+                            <li><a href="/projects/">РАБОТЫ</a></li>
                             <li style={{whiteSpace: "nowrap"}}><a href="#">О НАС</a></li>   
                         </ul>
                     </nav>
@@ -55,5 +51,4 @@ export default function Header() {
             </div>
         </header>
     )
-
 }

@@ -1,0 +1,187 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Разделение карточки на две колонки */
+  gap: 16px;
+  margin: 20px auto; /* Центрирование по горизонтали */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 80%;
+  overflow: hidden; /* Обрезание контента по границам карточки */
+}
+
+.cardimage {
+  width: 100%;
+  height: 100%; /* Фиксированная высота для изображения */
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Убедитесь, что это свойство применяется к изображению */
+  border-radius: 20px;
+}
+
+.cardinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
+  justify-content: space-between; /* Распределение контента по вертикали */
+}
+
+.cardtext {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid #333;
+  padding-left: 12px;
+}
+
+.cardplace,
+.cardtitle,
+.carddescription {
+  margin: 4px 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.cardplace {
+  background: #727272;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 16px; /* Внутренние отступы для текста */
+  border-radius: 15px; /* Скругление углов */
+  display: inline-block; /* Блок занимает пространство по ширине текста */
+  margin: 0 0 8px 0; /* Отступ снизу */
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+.cardtitle {
+  font-size: 30px;
+  color: #333;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-weight: 400;
+}
+
+.carddescription {
+  font-size: 24px;
+  color: #333;
+  text-align: justify;
+  flex-grow: 1; /* Позволяет описанию заполнять доступное пространство */
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-weight: 300;
+}
+
+.cardparameters {
+  list-style: none;
+  padding: 0;
+  font-size: 20px;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-weight: 200;
+  margin-top: auto; /* Прижимаем к нижней части */
+  width: 100%;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.cardparam {
+  font-size: 18px;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-weight: 200;
+  width: 100%;
+  color: #666;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .cardimage {
+    height: auto;
+  }
+
+  .cardtext {
+    border: 0;
+    padding-left: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .cardplace {
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .cardtitle {
+    text-align: center;
+    font-size: 36px;
+  }
+
+  .carddescription {
+    font-size: 26px;
+  }
+
+  .cardparameters {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 430px) {
+  .card {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin: 4px;
+  }
+
+  .cardimage {
+    height: auto;
+  }
+
+  .cardinfo {
+    padding: 8px;
+  }
+
+  .cardtext {
+    padding: 8px 8px;
+    border: 0;
+    border-bottom: #333 1px solid;
+  }
+
+  .cardplace {
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 8px auto;
+    white-space: normal;
+    max-width: calc(100% - 24px);
+  }
+
+  .cardtitle {
+    font-size: 24px;
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  .carddescription {
+    font-size: 20px;
+    text-align: justify;
+    margin: 8px 0;
+  }
+
+  .cardparameters {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .cardparam {
+    font-size: 16px;
+  }
+}

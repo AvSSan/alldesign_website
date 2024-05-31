@@ -20,20 +20,20 @@
 }
 
 .caption h3 {
-    font-size: 35px;
+    font-size: 35px !important;
     color: white;
     transition: 0.6s ease;
 }
 
 .caption p {
-    font-size: 16px;
+    font-size: 16px !important;
     color: white;
     white-space: pre-line;
 }
 
 @media screen and (max-width: 430px) {
     .caption h3 {
-        font-size: 25px;
+        font-size: 25px !important;
         color: white;
         transition: 0.6s ease;
     }

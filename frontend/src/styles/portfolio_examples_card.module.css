@@ -57,7 +57,6 @@
     padding-right: 10px;
     margin-bottom: 5%;
     overflow: hidden;
-
 }
 
 .placeborder > {
@@ -90,4 +89,6 @@
     font-weight: 300;
     font-size: 20px;
     color: #787886;
+    position: flex;
+    margin: 0;
 }

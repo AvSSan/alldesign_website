@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import styles from '../styles/slider.module.css';
 import Carousel from 'react-bootstrap/Carousel';
-import tempImg from '../static_files/temp.png';
-import tempImg2 from '../static_files/temp2.png';
-import tempImg3 from '../static_files/temp3.png';
-import Slide from './Slide';
+import tempImg from '../static_files/slide1.png';
+import tempImg2 from '../static_files/slide2.png';
+import tempImg3 from '../static_files/slide3.jpg';
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);

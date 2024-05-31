@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styles from '../styles/slider.module.css';
 import Carousel from 'react-bootstrap/Carousel';
 import tempImg from '../static_files/temp.png';
 import tempImg2 from '../static_files/temp2.png';

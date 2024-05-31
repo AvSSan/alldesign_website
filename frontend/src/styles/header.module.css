@@ -4,11 +4,7 @@
     font-family: "Comfortaa", sans-serif;
     font-weight: 1000;
     font-size: 14px;
- }
-
-
-
-
+}
 
 @media screen and (min-width: 800px) {
     .Header {
@@ -29,6 +25,7 @@
     .Header:hover {
         transition: 0.6s ease;
     }
+
     .logo {
         position: absolute;
         top: 5%;
@@ -63,7 +60,6 @@
         transition: 0.6s ease;
     }
 
-
     .rightnav {
         display: flex;
         justify-content: flex-start;
@@ -73,6 +69,7 @@
         padding-left: 15%;
         transition: 0.6s ease;
     }
+
     .logo_list ul {
         display: flex;
         justify-content: space-between;
@@ -105,20 +102,42 @@
     .logo_list ul li a {
         color: white;
         text-decoration: none;
-        transition: 0.6s ease;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .logo_list ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: bottom right;
+    }
+
+    .logo_list ul li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
 
     .logo_list ul li a:hover {
         color: white;
+    }
+
+    .logo_list ul li a:hover::after {
+        color: white;
         text-decoration: none;
         transition: 0.6s ease;
     }
-    
 }
 
 @media screen and (min-width: 430px) and (max-width: 800px) {
     .Header {
-        position: absolute;
+        position: fixed; /* Изменено с absolute на fixed */
         top: 0;
         left: 0;
         display: flex;
@@ -129,6 +148,7 @@
         z-index: 10;
         background-color: rgb(0, 0, 0) !important;
     }
+
     .logo {
         width: auto !important;
         height: 70% !important;
@@ -138,6 +158,7 @@
         padding-left: 0% !important;
         transition: 0.6s ease;
     }
+
     .logo_list {
         display: flex;
         justify-content: center;
@@ -147,6 +168,7 @@
         padding-top: 3px;
         transition: 0.6s ease;
     }
+
     .leftnav {
         display: flex;
         justify-content: flex-start !important;
@@ -156,9 +178,11 @@
         padding-left: 1%;
         transition: 0.6s ease;
     }
+
     .leftnav nav ul {
         padding-left: 7%;
     }
+
     .rightnav {
         display: flex;
         justify-content: flex-end !important;
@@ -168,6 +192,7 @@
         padding-right: 1%;
         transition: 0.6s ease;
     }
+
     .logo_list ul {
         display: flex;
         justify-content: space-between;
@@ -183,6 +208,7 @@
         display: flex;
         padding-right: 10px;
         transition: 0.6s ease;
+        position: relative;
     }
 
     .leftnav ul li a {
@@ -191,107 +217,131 @@
         display: flex;
         padding-left: 10px;
         transition: 0.6s ease;
+        position: relative;
+    }
+
+    .logo_list ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: bottom right;
+    }
+
+    .logo_list ul li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
 
     .logo_list ul li a:hover {
+        color: white;
+    }
+
+    .logo_list ul li a:hover::after {
         color: white;
         text-decoration: none;
         transition: 0.6s ease;
     }
 }
 
-
 @media screen and (max-width: 430px) {
     .Header {
-        position: absolute;
+        position: fixed; /* Изменено с absolute на fixed */
         top: 0;
         left: 0;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
         height: 8vh;
         z-index: 10;
         background-color: rgb(0, 0, 0) !important;
+        padding: 0 10px;
     }
+
     .logo {
-        opacity: 0;
-        display: none;
-        transition: 0.6s ease;
+        display: none; 
     }
+
     .logo_list {
         display: flex;
-        justify-content: center;
+        justify-content: space-between; 
         align-items: center;
         width: 100%;
-        padding-top: 3px;
-        padding-left: 0px;
-        transition: 0.6s ease;
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
-    .leftnav {
+
+    .leftnav, .rightnav {
         display: flex;
-        justify-content: flex-end !important;
+        justify-content: space-around; 
         align-items: center;
-        width: 50%;
-        padding-top: 10px;
-        padding-left: 1%;
-        transition: 0.6s ease;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
-    .rightnav {
+
+    .leftnav nav, .rightnav nav {
+        width: 100%;
         display: flex;
-        justify-content: flex-start !important;
-        align-items: center;
-        width: 50%;
-        padding-top: 10px;
-        padding-right: 1%;
-        transition: 0.6s ease;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
     }
-    .rightnav nav {
-        width: 100%;
-    }
-    .rightnav nav ul {
-        padding-left: 1%;
-        
-        transition: 0.6s ease;
-    }
-    .leftnav nav {
-        width: 100%;
-        transition: 0.6s ease;
-    }
-    .leftnav nav ul {
-        padding-right: 14%;
-        padding-left: 3%;
-        transition: 0.6s ease;
-    }
-    .logo_list ul {
+
+    .leftnav nav ul, .rightnav nav ul {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+        justify-content: space-around; 
         list-style: none;
-        transition: 0.6s ease;
+        padding: 0;
+        margin: 0;
+        width: 100%;
     }
 
-    .rightnav ul li a {
-        color: white;
-        text-decoration: none;
-        display: flex;
-        padding-right: 10px;
-        transition: 0.6s ease;
+    .leftnav ul li, .rightnav ul li {
+        padding: 0;
+        margin: 0;
+        width: auto;
     }
 
-    .leftnav ul li a {
+    .logo_list ul li a {
         color: white;
         text-decoration: none;
-        display: flex;
-        padding-left: 10px;
-        transition: 0.6s ease;
+        padding: 5px 10px;
+        position: relative;
+    }
+
+    .logo_list ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: bottom right;
+    }
+
+    .logo_list ul li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
 
     .logo_list ul li a:hover {
+        color: white;
+    }
+
+    .logo_list ul li a:hover::after {
         color: white;
         text-decoration: none;
         transition: 0.6s ease;
     }
 }
-
