@@ -8,7 +8,7 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    axios.get('http://loshga99.beget.tech/api/testimonials/')
+    axios.get('https://alldesignkhv.store/api/testimonials/')
       .then(response => {
         const uniqueTestimonials = response.data.filter((v, i, a) => a.findIndex(t => (t.id === v.id)) === i);
         setTestimonials(uniqueTestimonials);

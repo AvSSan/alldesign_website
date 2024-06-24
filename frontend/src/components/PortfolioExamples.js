@@ -12,7 +12,7 @@ export default function PortfolioExamples() {
                 <h2 className={styles.portfolio_examples_header_title2}>Мы поможем реализовать ваши желания и создать интерьер мечты</h2>
             </div>
             <div className={styles.portfolio_examples_list}>
-                <a href="/project/6">
+                <a href="/project/2">
                   <InteriorDesignCard
                     image={tempImg}
                     place="переулок Ленинградский"
@@ -24,12 +24,12 @@ export default function PortfolioExamples() {
                     parameters={["Площадь: 70 м²", "Количество жилых комнат: 3", "Количество членов семьи: 4"]}
                   />
                 </a>
-                <a href="/project/7">
+                <a href="/project/3">
                   <InteriorDesignCard
                     image={tempImg2}
                     place="Квартира в ЖК 'НОРДИК'"
                     title="Эргономичный дизайн-проект для семьи с ребенком"
-                    description="Выполнен в природных оттенках с обилием зелени. Также выполнен дизайн-проект детской комнаты. Также создан дизайн-проект детской комнаты. Оказываются услуги авторского надзора."
+                    description="Выполнен в природных оттенках с обилием зелени. Также создан дизайн-проект детской комнаты. Оказываются услуги авторского надзора."
                     parameters={["Площадь: 79 м²", "Количество жилых комнат: 3", "Количество членов семьи: 3"]}
                   />
                 </a>

@@ -302,12 +302,20 @@
         padding: 0;
         margin: 0;
         width: 100%;
+        
     }
 
     .leftnav ul li, .rightnav ul li {
         padding: 0;
         margin: 0;
         width: auto;
+    }
+
+    .leftnav ul li a, .rightnav ul li a {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        font-size: 12px;
     }
 
     .logo_list ul li a {

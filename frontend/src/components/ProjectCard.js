@@ -36,7 +36,7 @@ class ProjectCard extends React.Component {
 
     fetchProject() {
         const { projectId } = this.props;
-        axios.get(`http://loshga99.beget.tech/api/projects/${projectId}/`)
+        axios.get(`https://alldesignkhv.store/api/projects/${projectId}/`)
             .then(response => {
                 const project = response.data;
                 const images = project.images.map(image => image.image);

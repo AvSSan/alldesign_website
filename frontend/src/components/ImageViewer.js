@@ -1,11 +1,14 @@
 import React, { useState, useCallback } from 'react';
-import ImageViewer from 'react-simple-image-viewer';
+import Lightbox from 'yet-another-react-lightbox';
+import Captions from 'yet-another-react-lightbox/plugins/captions';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/captions.css';
 import styles from '../styles/ImageViewerComponent.module.css';
 
 export default function ImageViewerComponent({ urls }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = urls;
+  const images = urls.map((url) => ({ src: url })); // Convert urls to objects with 'src' property
 
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
@@ -21,17 +24,17 @@ export default function ImageViewerComponent({ urls }) {
     <div className={styles.imageViewerContainer}>
       {images.length > 0 && (
         <img
-          src={images[0]}
+          src={images[0].src}
           onClick={() => openImageViewer(0)}
           className={styles.mainImage}
           alt=""
         />
       )}
       <div className={styles.thumbnailContainer}>
-        {images.slice(1).map((src, index) => (
+        {images.slice(1).map((image, index) => (
           <div className={styles.thumbnailWrapper} key={index}>
             <img
-              src={src}
+              src={image.src}
               onClick={() => openImageViewer(index + 1)}
               className={styles.thumbnailImage}
               alt=""
@@ -41,12 +44,12 @@ export default function ImageViewerComponent({ urls }) {
       </div>
 
       {isViewerOpen && (
-        <ImageViewer
-          src={urls}
-          currentIndex={currentImage}
-          disableScroll={false}
-          closeOnClickOutside={true}
-          onClose={closeImageViewer}
+        <Lightbox
+          slides={images}
+          open={isViewerOpen}
+          index={currentImage}
+          close={closeImageViewer}
+          plugins={[Captions]}
         />
       )}
     </div>

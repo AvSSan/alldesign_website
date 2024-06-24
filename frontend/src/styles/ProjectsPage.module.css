@@ -17,6 +17,37 @@
     margin: 0 auto;
   }
   
+  .pageWrapper {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .overlay {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Затемнение фона */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 20px;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
   .card {
     display: flex;
     flex-direction: column;
@@ -28,6 +59,7 @@
     overflow: hidden;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     margin-bottom: 1rem;
+    background-color: #fff; /* Добавляем белый фон для карточек */
   }
   
   .card:hover {

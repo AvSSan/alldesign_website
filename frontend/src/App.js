@@ -19,7 +19,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
-        <Route path="/testimonials" element={<Testimonials/>}/>
         <Route path="/projects" element={<ProjectsPage/>}/>
         <Route path="/project/:id" element={<ProjectCardWrapper />} />
       </Routes>

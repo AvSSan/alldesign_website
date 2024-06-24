@@ -1,12 +1,14 @@
 import React from 'react';
-import styles from '../styles//ToMain.module.css';
+import styles from '../styles/ToMain.module.css';
 
 const ToMain = () => {
   return (
     <header className={styles.header}>
-      <a href="/" className={styles.link}>
-        На главную
-      </a>
+      <div className={styles.container}>
+        <a href="/" className={styles.link}>
+          На главную
+        </a>
+      </div>
     </header>
   );
 };

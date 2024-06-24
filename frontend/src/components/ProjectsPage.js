@@ -9,7 +9,7 @@ class ProjectsPage extends React.Component {
         this.state = {
             projects: null,
             error: null,
-            images: [],
+            backgroundImage: '',
         };
     }
 
@@ -24,19 +24,19 @@ class ProjectsPage extends React.Component {
     }
 
     fetchProject() {
-        const { projectId } = this.props;
-        axios.get(`http://loshga99.beget.tech/api/projects/`)
+        axios.get(`https://alldesignkhv.store/api/projects/`)
             .then(response => {
                 const projects = response.data;
-                this.setState({ projects: projects, error: null });
+                const backgroundImage = projects.length > 0 ? projects[0].images[0].image : '';
+                this.setState({ projects, error: null, backgroundImage });
             })
             .catch(error => {
-                this.setState({ error: error });
+                this.setState({ error });
             });
     }
 
     render() {
-        const { error, projects, images } = this.state;
+        const { error, projects, backgroundImage } = this.state;
 
         if (error) {
             return <div className={styles.error}>Error: {error.message}</div>;
@@ -47,22 +47,24 @@ class ProjectsPage extends React.Component {
         }
 
         return (
-            <div>
-                <ToMain />
-                <div className={styles.container}>
-                    <div className={styles.gridContainer}>
-                      {this.state.projects.map((item, index) => (
-                        <a key={index} href={`/project/${item.id}`} className={styles.card}>
-                          <div className={styles.cardImageContainer}>
-                            <img src={item.images[0].image} alt={item.title} className={styles.cardImage} />
-                          </div>
-                          <div className={styles.cardContent}>
-                            <h4>{item.location}</h4>
-                            <h3 className={styles.cardTitle}>{item.title}</h3>
-                            <p className={styles.cardText}>Нажмите для просмотра</p>
-                          </div>
-                        </a>
-                      ))}
+            <div className={styles.pageWrapper} style={{backgroundImage: `url(${backgroundImage})`}}>
+                <div className={styles.overlay}>
+                    <ToMain />
+                    <div className={styles.container}>
+                        <div className={styles.gridContainer}>
+                            {projects.map((item, index) => (
+                                <a key={index} href={`/project/${item.id}`} className={styles.card}>
+                                    <div className={styles.cardImageContainer}>
+                                        <img src={item.images[0].image} alt={item.title} className={styles.cardImage} />
+                                    </div>
+                                    <div className={styles.cardContent}>
+                                        <h4>{item.location}</h4>
+                                        <h3 className={styles.cardTitle}>{item.title}</h3>
+                                        <p className={styles.cardText}>Нажмите для просмотра</p>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

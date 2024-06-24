@@ -22,4 +22,15 @@
     margin: 0;
     font-size: 24px;
   }
-  
+
+  .createdby {
+    color: #3f3f3f;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .createdbylink {
+    font-size: 18px;
+    text-decoration: underline;
+    color: #525252;
+  }
