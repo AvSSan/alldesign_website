@@ -12,9 +12,8 @@
 
 .overlay {
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* Затемнение фона */
+  background-color: rgba(0, 0, 0, 0.7); 
 }
 .projectCard {
-  margin-top: 0; /* Убираем верхний отступ */
-  /* Остальные стили для .projectCard */
+  margin-top: 0; 
 }

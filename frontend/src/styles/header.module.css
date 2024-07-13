@@ -137,7 +137,7 @@
 
 @media screen and (min-width: 430px) and (max-width: 800px) {
     .Header {
-        position: fixed; /* Изменено с absolute на fixed */
+        position: fixed;
         top: 0;
         left: 0;
         display: flex;
@@ -251,7 +251,7 @@
 
 @media screen and (max-width: 430px) {
     .Header {
-        position: fixed; /* Изменено с absolute на fixed */
+        position: fixed;
         top: 0;
         left: 0;
         display: flex;

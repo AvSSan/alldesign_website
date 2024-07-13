@@ -1,0 +1,43 @@
+.blacklogoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
+  margin-top: 20vh;
+  background-color: #fff; /* Задайте фоновый цвет по вашему усмотрению */
+}
+
+.blacklogo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .blacklogoContainer {
+    padding: 20px; /* Добавьте отступы для небольших экранов */
+  }
+
+  .blacklogo {
+    max-width: 80%; /* Уменьшите максимальную ширину для небольших экранов */
+    max-height: 80%; /* Уменьшите максимальную высоту для небольших экранов */
+  }
+}
+
+@media (max-width: 480px) {
+  .blacklogoContainer {
+    margin-top: 260px;
+    margin-bottom: -50px;
+    padding: 10px; /* Дополнительно уменьшите отступы для очень маленьких экранов */
+  }
+
+  .blacklogo {
+    max-width: 70%; /* Еще больше уменьшите максимальную ширину */
+    max-height: 70%; /* Еще больше уменьшите максимальную высоту */
+  }
+}
+  

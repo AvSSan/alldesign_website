@@ -1,17 +1,17 @@
 .card {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Разделение карточки на две колонки */
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin: 20px auto; /* Центрирование по горизонтали */
+  margin: 20px auto;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   width: 80%;
-  overflow: hidden; /* Обрезание контента по границам карточки */
+  overflow: hidden; 
 }
 
 .cardimage {
   width: 100%;
-  height: 100%; /* Фиксированная высота для изображения */
+  height: 100%;
   background-size: cover;
   background-position: center;
   border-radius: 20px;
@@ -20,7 +20,7 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Убедитесь, что это свойство применяется к изображению */
+  object-fit: cover; 
   border-radius: 20px;
 }
 
@@ -30,7 +30,7 @@
   padding: 16px;
   padding-top: 0;
   padding-bottom: 0;
-  justify-content: space-between; /* Распределение контента по вертикали */
+  justify-content: space-between;
 }
 
 .cardtext {
@@ -56,10 +56,10 @@
   font-size: 16px;
   text-align: center;
   font-weight: bold;
-  padding: 8px 16px; /* Внутренние отступы для текста */
-  border-radius: 15px; /* Скругление углов */
-  display: inline-block; /* Блок занимает пространство по ширине текста */
-  margin: 0 0 8px 0; /* Отступ снизу */
+  padding: 8px 16px; 
+  border-radius: 15px; 
+  display: inline-block; 
+  margin: 0 0 8px 0; 
   white-space: nowrap;
   margin-left: 12px;
 }
@@ -75,7 +75,7 @@
   font-size: 24px;
   color: #333;
   text-align: justify;
-  flex-grow: 1; /* Позволяет описанию заполнять доступное пространство */
+  flex-grow: 1; 
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   font-weight: 300;
 }
@@ -86,7 +86,7 @@
   font-size: 20px;
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   font-weight: 200;
-  margin-top: auto; /* Прижимаем к нижней части */
+  margin-top: auto; 
   width: 100%;
   color: #666;
   margin-bottom: 0;

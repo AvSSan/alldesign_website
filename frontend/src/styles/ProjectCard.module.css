@@ -103,7 +103,6 @@
     background-color: darkred;
 }
 
-/* Медиазапросы для адаптивности */
 @media (max-width: 1024px) {
     .projectCard {
         flex-direction: column;

@@ -4,8 +4,9 @@
   align-items: center;
   padding: 2rem;
   width: 80%;
-  margin: 0 auto; /* Центрирование по горизонтали */
+  margin: 0 auto; 
   font-family: 'Fira Sans Extra Condensed', sans-serif;
+  
 }
 
 .textContainer {
@@ -28,14 +29,24 @@
   font-size: 22px;
 }
 
+.paragraph2 {
+  margin-bottom: 2rem;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: right;
+}
+
 .imageContainer {
   flex: 1;
   display: grid;
   position: relative;
+  padding-left: 10px;
 }
 
 .imageWrapper {
   position: relative;
+  max-height: 470px;
 }
 
 .image {
@@ -107,5 +118,12 @@
 @media (max-width: 430px) {
   .container {
     width: 100%;
+  }
+  .imageContainer {
+    margin-top: -30px;
+    margin-bottom: 20px;
+  }
+  .image {
+    padding-bottom: 20px;
   }
 }

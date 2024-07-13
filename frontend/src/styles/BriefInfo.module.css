@@ -1,0 +1,73 @@
+/* BriefInfo.module.css */
+.wrapper {
+  max-width: 550px;
+  height: 350px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding-top: 1px;
+  top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  background-color: #ffffff;
+  border: 5px solid #000000;
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+  pointer-events: auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  color: #000000;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #333333;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.description {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #333333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 340px;
+    height: 465px;
+  }
+  .card {
+    max-width: 320px;
+  }
+}

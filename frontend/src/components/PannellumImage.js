@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-
-import { Pannellum, PannellumVideo } from "pannellum-react";
+import { Pannellum } from "pannellum-react";
 
 const PannellumImage = ({url}) => (
   <div>

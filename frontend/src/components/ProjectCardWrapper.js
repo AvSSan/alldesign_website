@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ProjectCard from './ProjectCard';
-import styles from '../styles/ProjectCardWrapper.module.css'; // Предполагаем, что у вас есть файл со стилями
+import styles from '../styles/ProjectCardWrapper.module.css';
 
 function ProjectCardWrapper() {
   const { id } = useParams();

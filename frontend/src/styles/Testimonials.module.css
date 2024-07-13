@@ -1,20 +1,41 @@
-/* Import slick-carousel css files */
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
 .container {
-    padding-top: 50px;
-    width: 80%;
-    margin: 0 auto; /* Центрирование по горизонтали */
+  padding-top: 50px;
+  width: 80%;
+  margin: 0 auto; 
+  text-align: center;
 }
 
 .heading {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
 }
-/* Custom styles for the testimonial component */
+
+.heading::before,
+.heading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, #d4af37, #f1c40f);
+}
+
+.heading::before {
+  left: -70px;
+}
+
+.heading::after {
+  right: -70px;
+}
+
 .testimonial_card {
   display: flex;
   align-items: center;
@@ -59,4 +80,25 @@
 
 .slick_prev:before, .slick_next:before {
   color: #333;
+}
+
+@media (max-width: 480px) {
+  .heading {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+  }
+  .heading::before {
+    left: -30px;
+  }
+  
+  .heading::after {
+    right: -30px;
+  }
+  
 }

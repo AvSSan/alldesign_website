@@ -8,7 +8,7 @@ import styles from '../styles/ImageViewerComponent.module.css';
 export default function ImageViewerComponent({ urls }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = urls.map((url) => ({ src: url })); // Convert urls to objects with 'src' property
+  const images = urls.map((url) => ({ src: url })); 
 
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);

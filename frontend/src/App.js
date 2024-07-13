@@ -1,11 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { 
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from 'react-router-dom';
 import axios from 'axios';
-import MainPage from './components/MainPage';
-import Testimonials from './components/Testimonials';
+import MainPage from './components/mainpage/MainPage';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectCardWrapper from './components/ProjectCardWrapper';
+import BriefInfo from './components/mainpage/BriefInfo';
+import ProjectCarousel from './components/mainpage/ProjectsCarousel';
+import BeforeAfter from './components/mainpage/BeforeAfter';
 
 
 const serverURL = "http://loshga99.beget.tech/";
@@ -21,6 +28,8 @@ function App() {
         <Route path="/" element={<MainPage/>}/>
         <Route path="/projects" element={<ProjectsPage/>}/>
         <Route path="/project/:id" element={<ProjectCardWrapper />} />
+        <Route path="/testingroom" element={<BeforeAfter />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

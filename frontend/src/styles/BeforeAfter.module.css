@@ -1,0 +1,9 @@
+.beforeafter {
+    width: 80%;
+}
+
+@media (max-width: 480px) {
+  .beforeafter {
+      width: 95%;
+  }
+}
