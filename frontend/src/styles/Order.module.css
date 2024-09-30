@@ -1,0 +1,150 @@
+.formContainer {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .formTitle {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .formDescription {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formField {
+    margin-bottom: 20px;
+  }
+  
+  .formField label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .formField input[type="text"],
+  .formField input[type="email"],
+  .formField input[type="tel"],
+  .formField textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .formField input[type="text"]:focus,
+  .formField input[type="email"]:focus,
+  .formField input[type="tel"]:focus,
+  .formField textarea:focus {
+    border-color: #333;
+    outline: none;
+  }
+  
+  .formField textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .formField input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+  }
+  
+  .checkboxLabel a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .checkboxLabel a:hover {
+    text-decoration: underline;
+  }
+  
+  .submitButton {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+  }
+  
+  .submitButton:hover {
+    background-color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .formContainer {
+      padding: 15px;
+    }
+  
+    .formTitle {
+      font-size: 20px;
+    }
+  
+    .formField input[type="text"],
+    .formField input[type="email"],
+    .formField input[type="tel"],
+    .formField textarea {
+      font-size: 14px;
+    }
+  
+    .submitButton {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .formContainer {
+      padding: 10px;
+    }
+  
+    .formTitle {
+      font-size: 18px;
+    }
+  
+    .formField {
+      margin-bottom: 15px;
+    }
+  
+    .formField label {
+      font-size: 14px;
+    }
+  
+    .formField input[type="text"],
+    .formField input[type="email"],
+    .formField input[type="tel"],
+    .formField textarea {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .submitButton {
+      font-size: 14px;
+    }
+}

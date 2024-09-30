@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import companyLogo from '../../static_files/logo.png';
 import BlackLogo from './BlackLogo';
@@ -6,11 +5,15 @@ import Slider from './Slider';
 import AboutUs from './AboutUs';
 import Testimonials from './Testimonials';
 import styles from '../../styles/header.module.css';
+import styles2 from '../../styles/MainPage.module.css';
 import Contacts from './Contacts';
 import Filler from './Filler';
 import ProjectCarousel from './ProjectsCarousel';
 import Benefits from './Benefits';
 import BeforeAfterWhole from './BeforeAfterWhole';
+import WorkStages from './WorkStages';
+import ContactOverlay from './ContactOverlay';
+import Partners from './Partners';
 
 
 
@@ -38,18 +41,6 @@ export default function MainPage() {
         return () => window.removeEventListener('scroll', listenScrollEvent);
     }, []);
 
-    const portfolioRef = useRef(null);
-
-    const scrollToPortfolio = () => {
-        if (portfolioRef.current) {
-            const elementPosition = portfolioRef.current.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-                top: elementPosition,
-                behavior: 'smooth'
-            });
-        }
-    };
-
     return (
         <div>
             <header className={styles.Header} style={{backgroundColor: color}}>
@@ -66,7 +57,7 @@ export default function MainPage() {
                     <div className={styles.rightnav}>
                         <nav>
                             <ul>
-                                <li><a href="#services">УСЛУГИ</a></li>
+                                <li><a href="/services">УСЛУГИ</a></li>
                                 <li><a href="#contacts">КОНТАКТЫ</a></li>
                             </ul>
                         </nav>
@@ -88,8 +79,17 @@ export default function MainPage() {
             <div>
                 <BeforeAfterWhole />
             </div>
+            <div className={styles2.workstages}>
+                <WorkStages />
+            </div>
             <div id="testimonials">
                 <Testimonials />
+            </div>
+            <div className={styles2.partners}>
+                <Partners />
+            </div>
+            <div>
+                <ContactOverlay />
             </div>
             <div id="contacts">
                 <Contacts />

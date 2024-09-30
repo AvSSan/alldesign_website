@@ -5,34 +5,33 @@
     text-align: center;
 }
 
-.header {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-    width: 90%;
-  }
-  
-  .header::before,
-  .header::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(to right, #d4af37, #f1c40f);
-  }
-  
-  .header::before {
-    left: 400px;
-  }
-  
-  .header::after {
-    right: 400px;
-  }
+.title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.title::before,
+.title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, #d4af37, #f1c40f);
+}
+
+.title::before {
+  left: -60px;
+}
+
+.title::after {
+  right: -60px;
+}
 
 .beforeAfterContainer {
     width: 100%;
@@ -43,7 +42,7 @@
 }
 
 @media (max-width: 480px) {
-    .header {
+    .title {
         font-size: 20px;
         color: #333;
         margin-bottom: 15px;
@@ -53,21 +52,21 @@
         display: inline-block;
         font-weight: 400;
     }
-    .header::before,
-    .header::after {
+    .title::before,
+    .title::after {
       content: '';
       position: absolute;
       top: 50%;
-      width: 25px;
+      width: 45px;
       height: 2px;
       background: linear-gradient(to right, #d4af37, #f1c40f);
     }
-    .header::before {
-      left: -15px;
+    .title::before {
+      left: -55px;
     }
     
-    .header::after {
-      right: -15px;
+    .title::after {
+      right: -55px;
     }
     
   }

@@ -10,12 +10,11 @@ import axios from 'axios';
 import MainPage from './components/mainpage/MainPage';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectCardWrapper from './components/ProjectCardWrapper';
-import BriefInfo from './components/mainpage/BriefInfo';
-import ProjectCarousel from './components/mainpage/ProjectsCarousel';
-import BeforeAfter from './components/mainpage/BeforeAfter';
-
-
-const serverURL = "http://loshga99.beget.tech/";
+import Order from './components/Order';
+import TestForm from './components/TestForm';
+import UnderDevelopment from './components/UnderDevelopment';
+import Privacy from './components/Privacy';
+import Services from './components/Services';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -28,7 +27,10 @@ function App() {
         <Route path="/" element={<MainPage/>}/>
         <Route path="/projects" element={<ProjectsPage/>}/>
         <Route path="/project/:id" element={<ProjectCardWrapper />} />
-        <Route path="/testingroom" element={<BeforeAfter />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/test" element={<TestForm />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

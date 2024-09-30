@@ -1,0 +1,280 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 15px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.title::before,
+.title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(to right, #d4af37, #f1c40f);
+}
+
+.title::before {
+  left: -30px;
+}
+
+.title::after {
+  right: -30px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  line-height: 1.4;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  width: calc(50% - 15px);
+  max-width: 250px;
+  height: 150px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #000000, #333333);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card.active::before {
+  transform: scaleX(1);
+}
+
+.icon {
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.cardTitle {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.cardDescription {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  right: 6%;
+}
+
+.card.active .icon,
+.card.active .cardTitle {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.card.active .cardDescription {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .title::before,
+    .title::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(to right, #d4af37, #f1c40f);
+    }
+
+  .title::before {
+    left: -60px;
+  }
+  
+  .title::after {
+    right: -60px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .card {
+    height: 180px;
+  }
+
+  .icon {
+    font-size: 32px;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 50px 30px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .title::before,
+  .title::after {
+    width: 40px;
+  }
+
+  .title::before {
+    left: -50px;
+  }
+
+  .title::after {
+    right: -50px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    max-width: 80%;
+  }
+
+  .cardContainer {
+    gap: 20px;
+  }
+
+  .card {
+    width: calc(25% - 20px);
+    height: 200px;
+  }
+
+  .icon {
+    font-size: 36px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 40px 40px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .title::before,
+  .title::after {
+    width: 60px;
+  }
+
+  .title::before {
+    left: -80px;
+  }
+
+  .title::after {
+    right: -80px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    max-width: 70%;
+  }
+
+  .cardContainer {
+    gap: 30px;
+  }
+
+  .card {
+    height: 220px;
+  }
+
+  .icon {
+    font-size: 42px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardDescription {
+    font-size: 16px;
+  }
+
+  .card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card:hover .icon,
+  .card:hover .cardTitle {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  .card:hover .cardDescription {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}

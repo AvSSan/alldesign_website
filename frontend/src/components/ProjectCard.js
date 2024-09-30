@@ -5,8 +5,6 @@ import PannellumImage from './PannellumImage';
 import ImageViewerComponent from './ImageViewer';
 import ToMain from './ToMain';
 
-const serverURL = "http://loshga99.beget.tech/";
-
 class ProjectCard extends React.Component {
     constructor(props) {
         super(props);
@@ -83,9 +81,14 @@ class ProjectCard extends React.Component {
                             <li key={key}>{this.state.flatParams[key]}: {key === 'area' ? value + ' м²' : value}</li>
                         ))}
                     </ul>
+                    <div>
+                        <p>
+                            Панорамы:
+                        </p>
+                    </div>
                     <div className={styles.panoramaButtons}>
                         {project.panoramas.map((panorama, index) => (
-                            <button key={index} onClick={() => this.handlePanoramaClick(panorama)}>
+                            <button  className={styles.button} key={index} onClick={() => this.handlePanoramaClick(panorama)}>
                                 {panorama.name}
                             </button>
                         ))}

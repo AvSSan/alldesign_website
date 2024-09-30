@@ -1,75 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { X } from 'lucide-react';
 import styles from '../styles/ProjectsPage.module.css';
-import ToMain from './ToMain';
+import ToMain from './ToMain'
 
-class ProjectsPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            projects: null,
-            error: null,
-            backgroundImage: '',
-        };
+const ProjectsPage = () => {
+  const [projects, setProjects] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  const fetchProjects = async () => {
+    try {
+      const response = await axios.get('https://alldesignkhv.store/api/projects/');
+      setProjects(response.data);
+    } catch (error) {
+      setError(error.message);
     }
+  };
 
-    componentDidMount() {
-        this.fetchProject();
-    }
+  if (error) {
+    return <div className={styles.error}>Error: {error}</div>;
+  }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.projectId !== prevProps.projectId) {
-            this.fetchProject();
-        }
-    }
+  if (projects.length === 0) {
+    return <div className={styles.loading}>Загрузка...</div>;
+  }
 
-    fetchProject() {
-        axios.get(`https://alldesignkhv.store/api/projects/`)
-            .then(response => {
-                const projects = response.data;
-                const backgroundImage = projects.length > 0 ? projects[0].images[0].image : '';
-                this.setState({ projects, error: null, backgroundImage });
-            })
-            .catch(error => {
-                this.setState({ error });
-            });
-    }
-
-    render() {
-        const { error, projects, backgroundImage } = this.state;
-
-        if (error) {
-            return <div className={styles.error}>Error: {error.message}</div>;
-        }
-
-        if (!projects) {
-            return <div className={styles.loading}>Загрузка...</div>;
-        }
-
-        return (
-            <div className={styles.pageWrapper} style={{backgroundImage: `url(${backgroundImage})`}}>
-                <div className={styles.overlay}>
-                    <ToMain />
-                    <div className={styles.container}>
-                        <div className={styles.gridContainer}>
-                            {projects.map((item, index) => (
-                                <a key={index} href={`/project/${item.id}`} className={styles.card}>
-                                    <div className={styles.cardImageContainer}>
-                                        <img src={item.images[0].image} alt={item.title} className={styles.cardImage} />
-                                    </div>
-                                    <div className={styles.cardContent}>
-                                        <h4>{item.location}</h4>
-                                        <h3 className={styles.cardTitle}>{item.title}</h3>
-                                        <p className={styles.cardText}>Нажмите для просмотра</p>
-                                    </div>
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+  return (
+    <div>
+        <div>
+            <ToMain />
+        </div>
+        <div className={styles.pageWrapper}>
+          <div className={styles.container}>
+            <div className={styles.gridContainer}>
+              {projects.map((project) => (
+                <a
+                  key={project.id}
+                  href={`/project/${project.id}`}
+                  className={styles.projectItem}
+                >
+                  <img
+                    src={project.images[0].image}
+                    alt={project.title}
+                    className={styles.projectImage}
+                  />
+                  <div className={styles.projectOverlay}>
+                    <h3 className={styles.projectTitle}>{project.title}</h3>
+                  </div>
+                </a>
+              ))}
             </div>
-        );
-    }
-}
+          </div>
+        </div>
+    </div>
+  );
+};
 
 export default ProjectsPage;

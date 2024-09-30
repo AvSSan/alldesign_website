@@ -3,10 +3,10 @@ import styles from '../../styles/Benefits.module.css';
 import { Clock, FileText, Armchair, DollarSign } from 'lucide-react';
 
 const benefitsData = [
-  { icon: Clock, title: 'ВРЕМЯ', description: 'Тут будет какой-то умный текст про время' },
-  { icon: FileText, title: 'КОНТАКТЫ', description: 'Тут будет какой-то умный текст про контакты, исполнителей и прочее подобное' },
-  { icon: Armchair, title: 'ОПЫТ', description: 'Тут будет текст про то, какая опытная у тебя организация' },
-  { icon: DollarSign, title: 'ДЕНЬГИ', description: 'Тут будет текст про деньги' },
+  { icon: Clock, title: 'ВРЕМЯ', description: 'Соблюдаем сроки и график выполнения' },
+  { icon: FileText, title: 'КОНТАКТЫ', description: 'Оперативная поддержка и ответы на вопросы' },
+  { icon: Armchair, title: 'ОПЫТ', description: 'Многолетний опыт и экспертный подход к каждому проекту' },
+  { icon: DollarSign, title: 'ДЕНЬГИ', description: 'Оптимальное соотношение цены и качества, честные и прозрачные расценки' },
 ];
 
 const Benefits = () => {

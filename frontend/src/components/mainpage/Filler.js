@@ -7,7 +7,15 @@ const Filler = () => {
   return (
     <div className={styles.fillerContainer}>
       <div className={styles.briefInfoWrapper}>
-        <BriefInfo />
+        <BriefInfo
+          title='ДЛЯ ВАС'
+          description='All Design предлагает для вас услуги по дизайну интерьера
+            полного цикла. Для вашего блага мы проектируем, комплектуем и
+            строим ваши объекты. Выполняем индивидуальные интерьеры
+            разработанные исключительно под ваши потребности. Напишите нам о
+            вашем объекте и узнайте сколько это будет стоить.'
+          type='true'
+        />
       </div>
       <div className={styles.filler}>
         <img src={fillerImg} alt="Filler" className={styles.fillerImage} />

@@ -5,8 +5,8 @@ import styles from '../../styles/BeforeAfterWhole.module.css';
 const BeforeAfterWhole = () => {
     return (
         <div className={styles.container}>
-            <h2 className={styles.header}>
-                100% РЕАЛИЗАЦИЯ ОБЪЕКТА ПО ПРОЕКТУ!
+            <h2 className={styles.title}>
+                100% РЕАЛИЗАЦИЯ <br></br>ОБЪЕКТА!
             </h2>
             <div className={styles.beforeAfterContainer}>
                 <BeforeAfter />

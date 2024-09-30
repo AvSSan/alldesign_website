@@ -9,7 +9,7 @@
 .title {
   font-size: 32px;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -40,6 +40,7 @@
   max-width: 100%;
   margin: 0 auto 20px;
   line-height: 1.4;
+  margin-bottom: 25px;
 }
 
 .cardContainer {
@@ -74,7 +75,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(to right, #d4af37, #f1c40f);
+  background: linear-gradient(to right, #000000, #333333);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -85,7 +86,7 @@
 
 .icon {
   font-size: 28px;
-  color: #d4af37;
+  color: #000000;
   margin-bottom: 10px;
   transition: all 0.3s ease;
 }
@@ -163,7 +164,7 @@
   }
 
   .cardTitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .cardDescription {
@@ -218,7 +219,7 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 60px 40px;
+    padding: 40px 40px;
   }
 
   .title {

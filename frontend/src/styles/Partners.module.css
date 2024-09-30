@@ -1,0 +1,126 @@
+.carouselContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.title {
+    font-size: 32px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .title::before,
+  .title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(to right, #d4af37, #f1c40f);
+  }
+  
+  .title::before {
+    left: -30px;
+  }
+  
+  .title::after {
+    right: -30px;
+  }
+
+.sliderWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  padding: 10px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+@media (max-width: 1024px) {
+  .carouselContainer {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .carouselContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .title::before,
+    .title::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 2px;
+      background: linear-gradient(to right, #d4af37, #f1c40f);
+    }
+
+  .title::before {
+    left: -25px;
+  }
+  
+  .title::after {
+    right: -25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .title::before,
+  .title::after {
+    width: 40px;
+  }
+
+  .title::before {
+    left: -50px;
+  }
+
+  .title::after {
+    right: -50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .title::before,
+  .title::after {
+    width: 60px;
+  }
+
+  .title::before {
+    left: -80px;
+  }
+
+  .title::after {
+    right: -80px;
+  }
+}
+  

@@ -5,10 +5,11 @@
   flex-direction: column;
   overflow: hidden;
   border-radius: 10px;
-  background: #e0e0e0;
+  background: #000000;
   box-shadow:  5px 5px 10px #bebebe,
              -5px -5px 10px #ffffff;
   transition: transform 0.3s ease-in-out;
+  
 }
 
 .card:hover {
@@ -26,8 +27,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: #333;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
   padding: 10px;
   font-size: 18px;
   text-transform: uppercase;

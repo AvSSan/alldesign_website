@@ -5,7 +5,7 @@ const testimonialCard = ({ image, text, name }) => {
   return (
     <div className={styles.card}>
       <div className={styles.image}>
-        <img src={image} alt="First slide" />
+        <img src={image} alt="Тут должна была быть фотография" />
       </div>
       <div className={styles.text}>
         <p >{text}</p>

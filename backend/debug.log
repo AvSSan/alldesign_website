@@ -1,0 +1,49 @@
+INFO 2024-07-19 01:32:45,326 autoreload 110784 120904 Watching for file changes with StatReloader
+INFO 2024-07-19 01:32:58,084 autoreload 110784 120904 D:\Codes\GitHub\alldesign_website\backend\backend_api\views.py changed, reloading.
+INFO 2024-07-19 01:32:58,499 autoreload 107356 102268 Watching for file changes with StatReloader
+INFO 2024-07-19 01:33:13,896 basehttp 107356 120372 "OPTIONS /api/order HTTP/1.1" 200 0
+ERROR 2024-07-19 01:33:13,961 log 107356 105772 Internal Server Error: /api/order
+Traceback (most recent call last):
+  File "C:\Users\Mi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/order/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2024-07-19 01:33:13,964 basehttp 107356 105772 "POST /api/order HTTP/1.1" 500 77327
+INFO 2024-07-19 01:33:21,975 views 107356 108812 Email sent successfully for lena@mail.ru
+INFO 2024-07-19 01:33:21,976 basehttp 107356 108812 "POST /api/order/ HTTP/1.1" 200 17
+INFO 2024-07-19 01:39:37,887 basehttp 107356 116016 "GET /api/order HTTP/1.1" 301 0
+WARNING 2024-07-19 01:39:37,894 log 107356 115312 Method Not Allowed (GET): /api/order/
+WARNING 2024-07-19 01:39:37,895 basehttp 107356 115312 "GET /api/order/ HTTP/1.1" 405 0
+INFO 2024-07-19 01:39:59,970 autoreload 107356 102268 D:\Codes\GitHub\alldesign_website\backend\backend_api\views.py changed, reloading.
+INFO 2024-07-19 01:40:00,468 autoreload 120900 106284 Watching for file changes with StatReloader
+WARNING 2024-07-19 01:40:01,860 log 120900 110472 Method Not Allowed: /api/order/
+WARNING 2024-07-19 01:40:01,861 basehttp 120900 110472 "GET /api/order/ HTTP/1.1" 405 31
+WARNING 2024-07-19 01:40:01,953 log 120900 110472 Not Found: /favicon.ico
+WARNING 2024-07-19 01:40:01,954 basehttp 120900 110472 "GET /favicon.ico HTTP/1.1" 404 2341
+INFO 2024-07-19 01:41:22,556 autoreload 120900 106284 D:\Codes\GitHub\alldesign_website\backend\backend_api\views.py changed, reloading.
+INFO 2024-07-19 01:41:23,020 autoreload 122512 122516 Watching for file changes with StatReloader
+ERROR 2024-07-19 01:41:25,724 log 122512 122628 Internal Server Error: /api/order/
+Traceback (most recent call last):
+  File "C:\Users\Mi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Mi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view backend_api.views.send_design_request didn't return an HttpResponse object. It returned None instead.
+ERROR 2024-07-19 01:41:25,729 basehttp 122512 122628 "GET /api/order/ HTTP/1.1" 500 74300
+INFO 2024-07-19 01:41:52,446 autoreload 122512 122516 D:\Codes\GitHub\alldesign_website\backend\backend_api\views.py changed, reloading.
+INFO 2024-07-19 01:41:52,925 autoreload 117004 120504 Watching for file changes with StatReloader
+INFO 2024-07-19 02:32:56,950 autoreload 117004 120504 D:\Codes\GitHub\alldesign_website\backend\backend_api\views.py changed, reloading.
+INFO 2024-07-19 02:32:57,498 autoreload 101992 120276 Watching for file changes with StatReloader
+INFO 2024-07-19 02:33:01,946 autoreload 101992 120276 D:\Codes\GitHub\alldesign_website\backend\backend_api\views.py changed, reloading.
+INFO 2024-07-19 02:33:02,338 autoreload 107696 124536 Watching for file changes with StatReloader

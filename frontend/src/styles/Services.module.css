@@ -1,0 +1,85 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.serviceList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.checkmark {
+  color: #ffd700;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.serviceItem strong {
+  color: #808080;
+}
+
+.projectTypes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.projectCard {
+  width: calc(50% - 20px);
+  border: 3px solid #000000;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.projectCard h3 {
+  margin-top: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #808080;
+}
+
+.projectCard ul {
+  padding-left: 20px;
+}
+
+li {
+  color: #424242;
+}
+
+.orderButton {
+  background-color: #ffd700;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .projectCard {
+    width: 100%;
+  }
+}
