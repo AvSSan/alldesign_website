@@ -1,20 +1,49 @@
+.pageContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+}
+
 .projectCard {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 20px auto;
-    padding: 20px;
+    flex-direction: column;
+    margin: 40px auto;
+    padding: 40px;
+    margin-top: 20px;
     max-width: 1200px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     background-color: #fff;
+    flex-grow: 1;
+}
+
+.projectHeader {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.projectHeader:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #000;
+}
+
+.projectContent {
+    display: flex;
+    justify-content: space-between;
 }
 
 .leftPane {
     flex: 1;
-    padding-right: 20px;
+    padding-right: 40px;
 }
 
 .rightPane {
@@ -23,42 +52,84 @@
 }
 
 .projectTitle {
-    font-size: 24px;
+    font-size: 2.2rem;
+    font-weight: 700;
     margin-bottom: 10px;
+    color: #000;
 }
 
-.projectLocation,
-.projectDescription,
-.projectRoomParameters {
-    margin-bottom: 10px;
+.projectLocation {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
 }
 
-.projectRoomParameters ul {
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 30px 0 15px;
+    color: #000;
+    position: relative;
+    display: inline-block;
+}
+
+.projectDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.parametersList {
     list-style-type: none;
     padding: 0;
+    margin: 0 0 25px 0;
 }
 
-.projectRoomParameters li {
-    margin-bottom: 5px;
+.parameterItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.parameterLabel {
+    font-weight: 600;
+    color: #555;
+}
+
+.parameterValue {
+    color: #000;
+}
+
+.panoramasSection {
+    margin-top: 30px;
 }
 
 .panoramaButtons {
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.panoramaButtons button {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #000000;
+.panoramaButton {
+    padding: 12px 20px;
+    background-color: #000;
     color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.panoramaButtons button:hover {
-    background-color: #252525;
+.panoramaButton:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .panoramaModal {
@@ -67,119 +138,321 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .modalContent {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
     position: relative;
-    width: 80%;
-    max-width: 900px;
-}
-
-.pannellumContainer {
-    width: 100%;
-    height: 500px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow: auto;
 }
 
 .closeButton {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    color: #000;
     border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-
 .closeButton:hover {
-    background-color: darkred;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.panoramaTitle {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.pannellumContainer {
+    width: 100%;
+    height: 60vh;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Стили для состояний загрузки и ошибок */
+
+.loaderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    padding: 20px;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loadingText {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+    padding: 20px;
+}
+
+.errorIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #ffebee;
+    color: #d32f2f;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.errorTitle {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.errorMessage {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.backButton {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+    .projectCard {
+        margin: 30px auto;
+        padding: 30px;
+    }
 }
 
 @media (max-width: 1024px) {
+    .pageContainer {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .projectCard {
+        margin: 25px auto;
+        padding: 25px;
+        max-width: 90%;
+        box-sizing: border-box;
+    }
+    
+    .projectContent {
         flex-direction: column;
     }
     
     .leftPane, 
     .rightPane {
-        padding: 10px;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .leftPane {
+        margin-bottom: 30px;
+    }
+    
+    .projectHeader {
+        margin-bottom: 25px;
+    }
+    
+    .projectTitle {
+        font-size: 2rem;
+    }
+    
+    .panoramaButtons {
+        justify-content: center;
     }
     
     .pannellumContainer {
-        height: 500px;
+        height: 50vh;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projectCard {
+        padding: 30px;
+    }
+    
+    .projectHeader:after {
+        width: 70px;
     }
 }
 
 @media (max-width: 768px) {
     .projectCard {
-        padding: 10px;
+        margin: 20px auto;
+        padding: 20px;
     }
 
-    .leftPane {
-        padding: 0;
+    .projectTitle {
+        font-size: 1.8rem;
     }
     
-    .projectTitle {
-        font-size: 20px;
+    .projectLocation {
+        font-size: 1rem;
+    }
+    
+    .sectionTitle {
+        font-size: 1.3rem;
+    }
+    
+    .projectDescription {
+        font-size: 1rem;
+    }
+    
+    .panoramaButton {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .modalContent {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .panoramaTitle {
+        font-size: 1.3rem;
     }
     
     .pannellumContainer {
-        height: 300px;
-    }
-
-    .modalContent {
-        height: 540px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        position: relative;
-        width: 95%;
-        max-width: 900px;
+        height: 40vh;
     }
 }
 
 @media (max-width: 480px) {
-    
-    .rightPane {
-        padding: 0;
-        margin-top: 10px;
+    .pageContainer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
-
-    .leftPane {
+    
+    .projectCard {
+        margin: 10px;
+        padding: 15px;
+        width: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .projectContent {
+        flex-direction: column;
+    }
+    
+    .leftPane, .rightPane {
         width: 100%;
         padding: 0;
     }
-
+    
+    .projectHeader {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    
     .projectTitle {
-        font-size: 18px;
+        font-size: 1.5rem;
+    }
+    
+    .projectDescription {
+        font-size: 0.95rem;
+    }
+    
+    .sectionTitle {
+        font-size: 1.2rem;
+        margin: 20px 0 10px;
+    }
+    
+    .panoramaButtons {
+        gap: 10px;
+    }
+    
+    .panoramaButton {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .modalContent {
+        padding: 15px;
+    }
+    
+    .panoramaTitle {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
     }
     
     .pannellumContainer {
-        height: 200px;
+        height: 35vh;
     }
     
-    .panoramaButtons button {
-        padding: 5px 10px;
-        margin-right: 5px;
+    .errorTitle {
+        font-size: 1.5rem;
     }
-
-    .modalContent {
-        height: 540px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        position: relative;
-        width: 95%;
-        max-width: 900px;
+    
+    .errorMessage {
+        font-size: 1rem;
+    }
+    
+    .backButton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }

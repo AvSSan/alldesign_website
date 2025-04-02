@@ -13,24 +13,18 @@
   letter-spacing: 1px;
   position: relative;
   display: inline-block;
+  padding-bottom: 15px;
 }
 
-.title::before,
 .title::after {
   content: '';
   position: absolute;
-  top: 50%;
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(to right, #d4af37, #f1c40f);
-}
-
-.title::before {
-  left: -60px;
-}
-
-.title::after {
-  right: -60px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #000;
 }
 
 .beforeAfterContainer {
@@ -51,22 +45,17 @@
         position: relative;
         display: inline-block;
         font-weight: 400;
+        padding-bottom: 15px;
     }
-    .title::before,
+    
     .title::after {
       content: '';
       position: absolute;
-      top: 50%;
-      width: 45px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
       height: 2px;
-      background: linear-gradient(to right, #d4af37, #f1c40f);
+      background-color: #000;
     }
-    .title::before {
-      left: -55px;
-    }
-    
-    .title::after {
-      right: -55px;
-    }
-    
-  }
+}

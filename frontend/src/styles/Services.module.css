@@ -1,85 +1,181 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .title {
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #000;
 }
 
 .subtitle {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: #555;
 }
 
 .serviceList {
   list-style-type: none;
   padding: 0;
+  margin: 0 0 60px 0;
 }
 
 .serviceItem {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  padding: 25px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serviceItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .checkmark {
-  color: #ffd700;
-  margin-right: 10px;
-  font-size: 20px;
+  color: #000;
+  background-color: #ffd700;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.serviceItem div {
+  flex: 1;
+}
+
+.serviceItem p {
+  margin: 0 0 8px 0;
+  line-height: 1.6;
 }
 
 .serviceItem strong {
-  color: #808080;
+  color: #000;
+  font-weight: 600;
 }
 
 .projectTypes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
   margin-top: 40px;
 }
 
 .projectCard {
-  width: calc(50% - 20px);
-  border: 3px solid #000000;
-  padding: 20px;
-  margin-bottom: 20px;
+  width: calc(50% - 35px);
+  border: none;
+  padding: 35px;
+  margin-bottom: 30px;
   box-sizing: border-box;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.projectCard:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #ffd700;
 }
 
 .projectCard h3 {
   margin-top: 0;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 
 .price {
   font-weight: bold;
-  color: #808080;
+  color: #000;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
 }
 
 .projectCard ul {
   padding-left: 20px;
+  margin-bottom: 30px;
 }
 
-li {
-  color: #424242;
+.projectCard li {
+  color: #333;
+  padding: 5px 0;
+  position: relative;
 }
 
 .orderButton {
-  background-color: #ffd700;
+  background-color: #000;
+  color: white;
   border: none;
-  padding: 10px 20px;
-  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.orderButton:hover {
+  background-color: #333;
 }
 
 @media (max-width: 768px) {
   .projectCard {
     width: 100%;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .serviceItem {
+    flex-direction: column;
+  }
+  
+  .checkmark {
+    margin-bottom: 15px;
   }
 }

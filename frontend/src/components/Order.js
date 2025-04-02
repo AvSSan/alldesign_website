@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from '../styles/Order.module.css';
-import ToMain from './ToMain';
+import UniversalHeader from './UniversalHeader';
+import Contacts from './mainpage/Contacts';
 
 const initialFormData = {
   fio: '',
@@ -67,7 +68,7 @@ const Order = () => {
 
   return (
     <div>
-      <ToMain />
+      <UniversalHeader />
       <div className={styles.formContainer}>
       <h1 className={styles.formTitle}>ЗАЯВКА НА ДИЗАЙН-ПРОЕКТ</h1>
       <p className={styles.formDescription}>
@@ -116,6 +117,9 @@ const Order = () => {
         {submitStatus === 'success' && <p className={styles.successMessage}>Заявка успешно отправлена!</p>}
         {submitStatus === 'error' && <p className={styles.errorMessage}>Произошла ошибка при отправке. Попробуйте еще раз.</p>}
       </form>
+    </div>
+    <div id="contacts">
+      <Contacts />
     </div>
     </div>
   );

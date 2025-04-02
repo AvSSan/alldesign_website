@@ -39,47 +39,71 @@
   }
 
 @media (max-width: 1024px) {
-
+  .mainImage {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  .thumbnailContainer {
+    max-width: 500px;
+  }
+  
+  .thumbnailWrapper {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 768px) {
   .mainImage {
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: 400px;
+    object-fit: cover;
+  }
+  
+  .imageViewerContainer {
+    width: 100%;
   }
   
   .thumbnailContainer {
-    max-width: 400px;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: flex-start;
   }
   
   .thumbnailWrapper {
     width: 80px;
     height: 80px;
-  }
-  
-  .thumbnailImage {
-    width: 100%;
-    height: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .mainImage {
-    width: 96vw;
-    height: 400px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
   }
 
   .imageViewerContainer {
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
   }
   
   .thumbnailContainer {
-    max-width: 96vw;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
   
   .thumbnailWrapper {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
   
   .thumbnailImage {

@@ -28,6 +28,7 @@ export default function ImageViewerComponent({ urls }) {
           onClick={() => openImageViewer(0)}
           className={styles.mainImage}
           alt=""
+          loading="lazy"
         />
       )}
       <div className={styles.thumbnailContainer}>
@@ -38,6 +39,7 @@ export default function ImageViewerComponent({ urls }) {
               onClick={() => openImageViewer(index + 1)}
               className={styles.thumbnailImage}
               alt=""
+              loading="lazy"
             />
           </div>
         ))}

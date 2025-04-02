@@ -1,0 +1,89 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+.title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #333;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.paragraph {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.list {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.listItem {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.listItem::before {
+  content: "—";
+  position: absolute;
+  left: -15px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+
+  .paragraph, .listItem {
+    font-size: 16px;
+  }
+} 

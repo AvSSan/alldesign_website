@@ -46,22 +46,22 @@ const Partners = () => {
       <h2 className={styles.title}>НАШИ ПАРТНЕРЫ</h2>
       <Slider className={styles.slider} {...settings}>
         <div>
-          <img src={one} alt='Слайд_1' className={styles.image}/>
+          <img src={one} alt='Слайд_1' className={styles.image} loading="lazy" />
         </div>
         <div>
-          <img src={two} alt='Слайд_2' className={styles.image}/>
+          <img src={two} alt='Слайд_2' className={styles.image} loading="lazy" />
         </div>
         <div>
-          <img src={three} alt='Слайд_3' className={styles.image}/>
+          <img src={three} alt='Слайд_3' className={styles.image} loading="lazy" />
         </div>
         <div>
-          <img src={four} alt='Слайд_4' className={styles.image}/>
+          <img src={four} alt='Слайд_4' className={styles.image} loading="lazy" />
         </div>
         <div>
-          <img src={five} alt='Слайд_5' className={styles.image}/>
+          <img src={five} alt='Слайд_5' className={styles.image} loading="lazy" />
         </div>
         <div>
-          <img src={six} alt='Слайд_6' className={styles.image}/>
+          <img src={six} alt='Слайд_6' className={styles.image} loading="lazy" />
         </div>
       </Slider>
     </div>

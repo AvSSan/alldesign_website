@@ -14,24 +14,18 @@
   letter-spacing: 1px;
   position: relative;
   display: inline-block;
+  padding-bottom: 15px;
 }
 
-.title::before,
 .title::after {
   content: '';
   position: absolute;
-  top: 50%;
-  width: 20px;
-  height: 2px;
-  background: linear-gradient(to right, #d4af37, #f1c40f);
-}
-
-.title::before {
-  left: -30px;
-}
-
-.title::after {
-  right: -30px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #000;
 }
 
 .subtitle {
@@ -130,24 +124,18 @@
 
   .title {
     font-size: 20px;
+    padding-bottom: 15px;
   }
 
-  .title::before,
-    .title::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 50px;
-      height: 2px;
-      background: linear-gradient(to right, #d4af37, #f1c40f);
-    }
-
-  .title::before {
-    left: -60px;
-  }
-  
   .title::after {
-    right: -60px;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #000;
   }
 
   .subtitle {
@@ -178,19 +166,11 @@
 
   .title {
     font-size: 28px;
-  }
-
-  .title::before,
-  .title::after {
-    width: 40px;
-  }
-
-  .title::before {
-    left: -50px;
+    padding-bottom: 15px;
   }
 
   .title::after {
-    right: -50px;
+    width: 70px;
   }
 
   .subtitle {
@@ -223,19 +203,11 @@
 
   .title {
     font-size: 32px;
-  }
-
-  .title::before,
-  .title::after {
-    width: 60px;
-  }
-
-  .title::before {
-    left: -80px;
+    padding-bottom: 15px;
   }
 
   .title::after {
-    right: -80px;
+    width: 80px;
   }
 
   .subtitle {

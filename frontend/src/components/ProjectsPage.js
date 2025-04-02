@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { X } from 'lucide-react';
 import styles from '../styles/ProjectsPage.module.css';
-import ToMain from './ToMain'
+import UniversalHeader from './UniversalHeader';
+import Contacts from './mainpage/Contacts';
+import LoadingSpinner from './LoadingSpinner';
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
@@ -26,35 +27,44 @@ const ProjectsPage = () => {
   }
 
   if (projects.length === 0) {
-    return <div className={styles.loading}>Загрузка...</div>;
+    return <LoadingSpinner />;
   }
 
   return (
     <div>
-        <div>
-            <ToMain />
-        </div>
+        <UniversalHeader />
         <div className={styles.pageWrapper}>
           <div className={styles.container}>
-            <div className={styles.gridContainer}>
+            <div className={styles.projectsGrid}>
               {projects.map((project) => (
-                <a
-                  key={project.id}
-                  href={`/project/${project.id}`}
-                  className={styles.projectItem}
-                >
-                  <img
-                    src={project.images[0].image}
-                    alt={project.title}
-                    className={styles.projectImage}
-                  />
-                  <div className={styles.projectOverlay}>
-                    <h3 className={styles.projectTitle}>{project.title}</h3>
+                <div key={project.id} className={styles.projectCard}>
+                  <a
+                    href={`/project/${project.id}`}
+                    className={styles.projectImageContainer}
+                  >
+                    <img
+                      src={project.images[0].image}
+                      alt={project.title}
+                      className={styles.projectImage}
+                      loading="lazy"
+                    />
+                  </a>
+                  <div className={styles.projectInfo}>
+                    <a href={`/project/${project.id}`} className={styles.projectTitleLink}>
+                      <h3 className={styles.projectTitle}>{project.title}</h3>
+                    </a>
+                    <p className={styles.projectDetails}>
+                      {project.location && `${project.location}, `}
+                      {project.room_parameters && project.room_parameters.area && `${project.room_parameters.area} м²`}
+                    </p>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </div>
+        </div>
+        <div id="contacts">
+          <Contacts />
         </div>
     </div>
   );

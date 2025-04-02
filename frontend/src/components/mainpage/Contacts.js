@@ -14,7 +14,7 @@ const Contacts = () => {
         </a>
       </div>
       <p className={styles.phone}>+7 909 872 87 57</p>
-      <p className={styles.createdby}>created by <a className={styles.createdbylink} href='https://t.me/kim_deog_seon'>kim_deog_seon</a></p>
+      <p className={styles.createdby}>Developed by <a className={styles.createdbylink} href='https://t.me/kim_deog_seon'>kim_deog_seon</a></p>
     </footer>
   );
 };

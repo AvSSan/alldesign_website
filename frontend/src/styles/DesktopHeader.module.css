@@ -1,0 +1,110 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  z-index: 10;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+
+.logo {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 50px;
+  height: 50px;
+  z-index: 11;
+}
+
+.logo_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.leftnav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  padding-top: 15px;
+  padding-right: 15%;
+}
+
+.rightnav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70%;
+  padding-top: 15px;
+  padding-left: 15%;
+}
+
+.logo_list ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  list-style: none;
+}
+
+.rightnav ul li {
+  position: flex;
+  margin: 0;
+  border-right: 100px solid rgba(0, 0, 0, 0);
+}
+
+.leftnav ul {
+  display: flex;
+  padding-right: 2rem;
+}
+
+.leftnav ul li {
+  position: flex;
+  margin: 0;
+  border-left: 100px solid rgba(0, 0, 0, 0);
+}
+
+.logo_list ul li a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.logo_list ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right;
+}
+
+.logo_list ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.logo_list ul li a:hover {
+  color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    display: none;
+  }
+} 

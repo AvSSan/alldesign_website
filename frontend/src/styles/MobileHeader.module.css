@@ -1,0 +1,167 @@
+.mobileHeader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  height: 50px;
+  position: relative;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.menuButton {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+  position: absolute;
+  right: 15px;
+  z-index: 2;
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menuOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menuContent {
+  position: fixed;
+  top: 0;
+  right: -80%;
+  width: 80%;
+  max-width: 350px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuOpen .menuContent {
+  right: 0;
+}
+
+.menuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menuLogo {
+  height: 30px;
+  width: auto;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+}
+
+.menuNav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  margin-bottom: 5px;
+}
+
+.menuLink {
+  display: block;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.menuLink:hover, .menuLink:active {
+  background-color: #f9f9f9;
+  color: #000;
+  border-left-color: #000;
+}
+
+/* Только для мобильных устройств и планшетов */
+@media (max-width: 1024px) {
+  .mobileHeader {
+    display: block;
+  }
+}
+
+/* Для более маленьких устройств */
+@media (max-width: 480px) {
+  .menuContent {
+    width: 90%;
+  }
+  
+  .menuLink {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  
+  .headerContent {
+    padding: 8px 12px;
+    height: 45px;
+  }
+  
+  .logo {
+    height: 35px;
+  }
+} 

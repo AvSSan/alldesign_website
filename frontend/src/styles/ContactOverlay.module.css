@@ -8,116 +8,286 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 0;
   }
   
   .wrapper {
-    display: flex; /* Add flex display */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90%;
-    max-width: 500px;
-    height: 90%; /* Ensure it takes most of the viewport height */
-    max-height: 450px;
+    max-width: 550px;
+    min-height: 500px;
+    position: relative;
+    z-index: 1;
   }
   
   .overlay {
     background-color: white;
-    padding: 2rem;
-    border: 5px solid #000000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    height: auto; /* Auto height to fit content */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #000;
   }
   
   .title {
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  .title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #000;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .contactInfo {
-    margin-bottom: 1.5rem;
+    margin-bottom: 30px;
   }
   
   .infoItem {
     display: flex;
+    margin-bottom: 25px;
+  }
+  
+  .iconWrapper {
+    display: flex;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
   }
   
   .icon {
-    flex-shrink: 0;
-    margin-right: 0.5rem;
-    color: #000000;
+    color: #000;
+    margin-top: 10px;
+  }
+  
+  .infoContent {
+    flex: 1;
+  }
+  
+  .infoTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #333;
+  }
+  
+  .infoContent p {
+    margin: 0 0 8px 0;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  .mapLink {
+    display: inline-flex;
+    align-items: center;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 5px;
+    transition: color 0.3s;
+  }
+  
+  .mapLink:hover {
+    color: #555;
+  }
+  
+  .mapLink svg {
+    margin-left: 5px;
+  }
+  
+  .emailLink {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+  }
+  
+  .emailLink:hover {
+    color: #555;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #000;
+    font-size: 18px;
+    transition: all 0.3s ease;
+  }
+  
+  .socialLink:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
   }
   
   .requestInfo {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+  }
+  
+  .requestInfo p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #333;
   }
   
   .requestButton {
-    background-color: #000000;
+    background-color: #000;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+    padding: 14px 30px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
   }
   
   .requestButton:hover {
     background-color: #333;
-  }
-  
-  .socialIcons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
   
   /* Адаптивные стили */
   @media (max-width: 768px) {
-    .wrapper {
-        max-height: 520px;
+    .container {
+      padding: 30px 0;
     }
-
+    
+    .wrapper {
+      min-height: auto;
+    }
+    
     .overlay {
-      padding: 1.5rem;
+      padding: 30px;
     }
   
     .title {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      margin-bottom: 25px;
     }
-  
+    
     .infoItem {
-      flex-direction: column;
+      margin-bottom: 20px;
     }
-  
-    .icon {
-      margin-bottom: 0.5rem;
+    
+    .requestInfo {
+      margin-top: 30px;
+      padding-top: 25px;
+    }
+    
+    .requestInfo p {
+      font-size: 1rem;
+    }
+    
+    .requestButton {
+      padding: 12px 25px;
+      font-size: 0.9rem;
     }
   }
   
   @media (max-width: 480px) {
-    .wrapper {
-        max-height: 500px;
+    .container {
+      padding: 20px 0;
     }
-
+    
     .overlay {
-      padding: 1rem;
-      width: 95%;
+      padding: 25px 20px;
     }
   
     .title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
     }
-  
+    
+    .title::after {
+      width: 60px;
+    }
+    
+    .iconWrapper {
+      width: 35px;
+      height: 35px;
+      margin-right: 12px;
+    }
+    
+    .icon {
+      margin-top: 8px;
+    }
+    
+    .infoTitle {
+      font-size: 1rem;
+    }
+    
+    .infoContent p {
+      font-size: 0.9rem;
+    }
+    
+    .requestInfo {
+      margin-top: 25px;
+      padding-top: 20px;
+    }
+    
+    .requestInfo p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+    
     .requestButton {
       width: 100%;
+      padding: 12px 20px;
+      font-size: 0.85rem;
+    }
+    
+    .socialLink {
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
     }
   }
   

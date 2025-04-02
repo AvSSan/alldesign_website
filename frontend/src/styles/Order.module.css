@@ -1,23 +1,46 @@
 .formContainer {
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    margin: 40px auto 60px;
+    margin-top: 20px;
+    padding: 40px;
+    font-family: 'Montserrat', Arial, sans-serif;
     box-sizing: border-box;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
   .formTitle {
     text-align: center;
-    font-size: 24px;
+    font-size: 2.2rem;
+    font-weight: 700;
     margin-bottom: 20px;
-    color: #333;
+    color: #000;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  .formTitle:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #000;
   }
   
   .formDescription {
     text-align: center;
-    margin-bottom: 30px;
-    color: #666;
+    margin-bottom: 40px;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .form {
@@ -26,14 +49,15 @@
   }
   
   .formField {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   
   .formField label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 600;
     color: #333;
+    font-size: 0.95rem;
   }
   
   .formField input[type="text"],
@@ -41,110 +65,178 @@
   .formField input[type="tel"],
   .formField textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
   }
   
   .formField input[type="text"]:focus,
   .formField input[type="email"]:focus,
   .formField input[type="tel"]:focus,
   .formField textarea:focus {
-    border-color: #333;
+    border-color: #000;
     outline: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   }
   
   .formField textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
   }
   
   .formField input[type="checkbox"] {
-    margin-right: 10px;
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 2px;
   }
   
   .checkboxLabel {
     display: flex;
     align-items: center;
     font-weight: normal;
+    font-size: 0.9rem;
+    color: #555;
   }
   
   .checkboxLabel a {
-    color: #007bff;
+    color: #000;
     text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    position: relative;
   }
   
-  .checkboxLabel a:hover {
-    text-decoration: underline;
+  .checkboxLabel a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+  }
+  
+  .checkboxLabel a:hover:after {
+    transform: scaleX(1);
   }
   
   .submitButton {
-    background-color: #000000;
+    background-color: #000;
     color: white;
     border: none;
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: 16px 40px;
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    align-self: flex-start;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    align-self: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .submitButton:hover {
     background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .submitButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .successMessage {
+    text-align: center;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+  
+  .errorMessage {
+    text-align: center;
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
   }
   
   @media (max-width: 768px) {
     .formContainer {
-      padding: 15px;
+      padding: 30px 20px;
+      margin: 30px auto 50px;
     }
   
     .formTitle {
-      font-size: 20px;
+      font-size: 1.8rem;
+    }
+  
+    .formDescription {
+      font-size: 1rem;
+      margin-bottom: 30px;
     }
   
     .formField input[type="text"],
     .formField input[type="email"],
     .formField input[type="tel"],
     .formField textarea {
-      font-size: 14px;
+      font-size: 0.95rem;
+      padding: 12px;
     }
   
     .submitButton {
       width: 100%;
-      padding: 10px;
-      font-size: 16px;
+      padding: 14px;
+      font-size: 0.95rem;
     }
   }
   
   @media (max-width: 480px) {
     .formContainer {
-      padding: 10px;
+      padding: 20px 15px;
+      margin: 20px auto 40px;
     }
   
     .formTitle {
-      font-size: 18px;
+      font-size: 1.5rem;
     }
   
     .formField {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
   
     .formField label {
-      font-size: 14px;
+      font-size: 0.9rem;
     }
   
     .formField input[type="text"],
     .formField input[type="email"],
     .formField input[type="tel"],
     .formField textarea {
-      padding: 8px;
-      font-size: 14px;
+      padding: 10px;
+      font-size: 0.9rem;
     }
   
     .submitButton {
-      font-size: 14px;
+      font-size: 0.9rem;
+      padding: 12px;
     }
-}
+  }

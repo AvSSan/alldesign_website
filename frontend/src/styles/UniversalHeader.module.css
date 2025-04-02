@@ -1,0 +1,35 @@
+.headerContainer {
+  width: 100%;
+}
+
+.desktopHeader {
+  display: block;
+}
+
+.mobileHeader {
+  display: none;
+}
+
+body:not(.mainPage) {
+  padding-top: 60px;
+}
+
+@media (max-width: 1024px) {
+  .desktopHeader {
+    display: none;
+  }
+  
+  .mobileHeader {
+    display: block;
+  }
+  
+  body:not(.mainPage) {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  body:not(.mainPage) {
+    padding-top: 45px;
+  }
+} 

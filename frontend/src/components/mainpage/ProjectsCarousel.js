@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from '../../styles/ProjectCarousel.module.css';
 import ProjectCarouselCard from './ProjectCarouselCard';
 import axios from 'axios';
+import LoadingSpinner from '../LoadingSpinner';
 
 const ProjectCarousel = () => {
   const [projects, setProjects] = useState([]);
@@ -10,7 +11,9 @@ const ProjectCarousel = () => {
   const [error, setError] = useState(null);
   const [visibleCards, setVisibleCards] = useState(3);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const carouselRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -46,14 +49,26 @@ const ProjectCarousel = () => {
   }, []);
 
   useEffect(() => {
-    if (projects.length > 0) {
-      const interval = setInterval(() => {
-        nextSlide();
-      }, 2000);
+    const startAutoSlide = () => {
+      if (projects.length > 0 && !intervalRef.current) {
+        intervalRef.current = setInterval(() => {
+          if (!isPaused && !isTransitioning) {
+            setIsTransitioning(true);
+            setCurrentIndex(prevIndex => prevIndex + 1);
+          }
+        }, 3000);
+      }
+    };
 
-      return () => clearInterval(interval);
-    }
-  }, [projects, currentIndex, isTransitioning]);
+    startAutoSlide();
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [projects.length, isPaused, isTransitioning]);
 
   const nextSlide = () => {
     if (isTransitioning) return;
@@ -76,7 +91,15 @@ const ProjectCarousel = () => {
     }
   };
 
-  if (loading) return <div className={styles.loading}>Загрузка проектов...</div>;
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+
+  if (loading) return <LoadingSpinner />;
   if (error) return <div className={styles.error}>{error}</div>;
   if (projects.length === 0) return <div className={styles.noProjects}>Проекты не найдены</div>;
 
@@ -84,7 +107,12 @@ const ProjectCarousel = () => {
     <div className={styles.carouselContainer}>
       <h2 className={styles.title}>ГАЛЕРЕЯ ИНТЕРЬЕРОВ</h2>
       <p className={styles.subtitle}>Вдохновение для вашего идеального дома</p>
-      <div className={styles.carousel} ref={carouselRef}>
+      <div 
+        className={styles.carousel} 
+        ref={carouselRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div
           className={styles.carouselTrack}
           style={{

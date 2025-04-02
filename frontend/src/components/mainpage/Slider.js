@@ -19,6 +19,7 @@ function ControlledCarousel() {
             src={tempImg} 
             alt="First slide" 
             style={{ width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(0.5)' }}
+            loading="lazy"
         />
         <Carousel.Caption className={styles.caption}>
           <div className={styles.htext}>
@@ -34,6 +35,7 @@ function ControlledCarousel() {
             src={tempImg2} 
             alt="Second slide" 
             style={{ width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(0.5)' }}
+            loading="lazy"
         />
         <Carousel.Caption className={styles.caption}>
           <div className={styles.htext}>
@@ -49,6 +51,7 @@ function ControlledCarousel() {
             src={tempImg3} 
             alt="Third slide" 
             style={{ width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(0.5)' }}
+            loading="lazy"
         />
         <Carousel.Caption className={styles.caption}>
           <div className={styles.htext}>

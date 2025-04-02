@@ -7,7 +7,7 @@ import blackCompanyLogo from '../../static_files/blacklogo.png';
 export default function BlackLogo() {
     return (
       <div className={styles.blacklogoContainer}>
-        <img src={blackCompanyLogo} className={styles.blacklogo} />
+        <img src={blackCompanyLogo} className={styles.blacklogo} loading="lazy" />
       </div>
       );
 };

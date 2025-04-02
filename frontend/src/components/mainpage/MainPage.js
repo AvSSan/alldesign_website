@@ -14,14 +14,21 @@ import BeforeAfterWhole from './BeforeAfterWhole';
 import WorkStages from './WorkStages';
 import ContactOverlay from './ContactOverlay';
 import Partners from './Partners';
-
-
+import MobileHeader from '../MobileHeader';
 
 export default function MainPage() {
     const [color, setColor] = useState("rgba(0, 0, 0, 0)");
     const [logoWidth, setLogoWidth] = useState(150);
     const [logoHeight, setLogoHeight] = useState(150);
     const [logoTop, setLogoTop] = useState(5);
+    
+    useEffect(() => {
+        document.body.classList.add('mainPage');
+        
+        return () => {
+            document.body.classList.remove('mainPage');
+        };
+    }, []);
     
     const listenScrollEvent = event => {
         if (window.scrollY < 100) {
@@ -64,6 +71,7 @@ export default function MainPage() {
                     </div>
                 </div>
             </header>
+            <MobileHeader />
             <Slider />
             <Filler />
             <BlackLogo />

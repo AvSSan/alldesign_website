@@ -5,7 +5,7 @@ const InteriorDesignCard = ({ image, place, title, description, parameters }) =>
   return (
     <div className={styles.card}>
       <div className={styles.cardimage}>
-        <img className={styles.image} src={image} alt="First slide" />
+        <img className={styles.image} src={image} alt="First slide" loading="lazy" />
       </div>
       <div className={styles.cardinfo}>
         <div className={styles.cardplace}>{place}</div>

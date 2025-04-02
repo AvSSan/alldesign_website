@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/Services.module.css';
-import ToMain from './ToMain';
+import UniversalHeader from './UniversalHeader';
+import Contacts from './mainpage/Contacts';
 
 const Services = () => {
   const services = [
@@ -71,11 +72,28 @@ const Services = () => {
     }
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Услуги дизайна интерьера",
+    "provider": {
+      "@type": "Organization",
+      "name": "All Design"
+    },
+    "offers": projectTypes.map(project => ({
+      "@type": "Offer",
+      "name": project.title,
+      "price": project.price,
+      "description": project.items.join(", ")
+    }))
+  };
+
   return (
     <div>
-      <div>
-        <ToMain />
-      </div>
+      <script type="application/ld+json">
+        {JSON.stringify(serviceSchema)}
+      </script>
+      <UniversalHeader />
       <div className={styles.container}>
         <h2 className={styles.title}>УСЛУГИ И ЦЕНЫ</h2>
         <div className={styles.subtitle}>
@@ -111,6 +129,9 @@ const Services = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div id="contacts">
+        <Contacts />
       </div>
     </div>
   );

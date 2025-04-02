@@ -18,7 +18,7 @@ const Filler = () => {
         />
       </div>
       <div className={styles.filler}>
-        <img src={fillerImg} alt="Filler" className={styles.fillerImage} />
+        <img src={fillerImg} alt="Filler" className={styles.fillerImage} loading="lazy" />
       </div>
     </div>
   );

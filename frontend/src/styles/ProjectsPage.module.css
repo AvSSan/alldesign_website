@@ -1,67 +1,84 @@
 .pageWrapper {
   min-height: 100vh;
   background-color: #f3f4f6;
+  padding: 0;
 }
 
 .container {
-  padding: 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.gridContainer {
+.projectsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  row-gap: 3rem;
+  column-gap: 0;
 }
 
 @media (min-width: 768px) {
-  .gridContainer {
-    grid-template-columns: repeat(3, 1fr);
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+    column-gap: 0;
   }
 }
 
-@media (min-width: 1024px) {
-  .gridContainer {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.projectCard {
+  display: flex;
+  flex-direction: column;
 }
 
-.projectItem {
+.projectImageContainer {
+  display: block;
+  width: 100%;
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 0;
 }
 
 .projectImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
-.projectItem:hover .projectImage {
-  transform: scale(1.1);
+.projectImageContainer:hover .projectImage {
+  filter: brightness(0.65);
 }
 
-.projectOverlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-.projectItem:hover .projectOverlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 1;
+.projectInfo {
+  padding: 1rem 2rem;
+  position: relative;
+  width: 100%;
+  background-color: #f3f4f6;
 }
 
 .projectTitle {
-  color: white;
-  text-align: center;
-  padding: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.projectTitleLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.projectTitleLink:hover .projectTitle {
+  color: #555;
+}
+
+.projectDetails {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
 }
 
 .error {

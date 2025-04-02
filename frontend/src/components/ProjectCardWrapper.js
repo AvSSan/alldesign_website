@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ProjectCard from './ProjectCard';
 import styles from '../styles/ProjectCardWrapper.module.css';
+import LoadingSpinner from './LoadingSpinner';
 
 function ProjectCardWrapper() {
   const { id } = useParams();
@@ -32,7 +33,7 @@ function ProjectCardWrapper() {
   }
 
   if (!projectData) {
-    return <div className={styles.loading}>Загрузка...</div>;
+    return <LoadingSpinner />;
   }
 
   return (
