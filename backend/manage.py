@@ -3,6 +3,7 @@
 import os
 import sys
 
+import console_to_file
 
 def main():
     """Run administrative tasks."""

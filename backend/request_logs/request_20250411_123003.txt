@@ -1,0 +1,7 @@
+ФИО: test
+Email: test@test.test
+Объект: test
+Телефон: test
+Пожелания: test
+WhatsApp отправлен: True
+Результат отправки: <p>Message to: +79996179316<p>Text to send: %0AНовая заявка на дизайн-проект:%0A%0AФИО: test%0AEmail: test@test.test%0AОбъект: test%0AТелефон: test%0AПожелания: test%0A                <p><b>Message queued.</b> You will receive it in a few seconds.

@@ -1,0 +1,218 @@
+
+0 static files copied to '/home/l/loshga99/loshga99.beget.tech/backend/staticfiles', 162 unmodified, 466 post-processed.
+
+0 static files copied to '/home/l/loshga99/loshga99.beget.tech/backend/staticfiles', 162 unmodified, 423 post-processed.
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 12, in main
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 12, in main
+        from django.core.management import execute_from_command_linefrom django.core.management import execute_from_command_line
+
+ModuleNotFoundErrorModuleNotFoundError: : No module named 'django'No module named 'django'
+
+
+
+The above exception was the direct cause of the following exception:
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 23, in <module>
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 23, in <module>
+        main()main()
+
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 14, in main
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 14, in main
+        raise ImportError(raise ImportError(
+
+ImportErrorImportError: : Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+
+[CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+[CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+[CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+[CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+CommandError: Unable to serialize database: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 23, in <module>
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 23, in <module>
+        main()main()
+
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 19, in main
+  File "/home/l/loshga99/loshga99.beget.tech/backend/manage.py", line 19, in main
+        execute_from_command_line(sys.argv)execute_from_command_line(sys.argv)
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+        utility.execute()utility.execute()
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+        self.fetch_command(subcommand).run_from_argv(self.argv)self.fetch_command(subcommand).run_from_argv(self.argv)
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+        self.execute(*args, **cmd_options)self.execute(*args, **cmd_options)
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/base.py", line 457, in execute
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/base.py", line 457, in execute
+        self.check(**check_kwargs)self.check(**check_kwargs)
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/base.py", line 492, in check
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/management/base.py", line 492, in check
+        all_issues = checks.run_checks(all_issues = checks.run_checks(
+
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+        new_errors = check(app_configs=app_configs, databases=databases)new_errors = check(app_configs=app_configs, databases=databases)
+
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/checks/database.py", line 13, in check_database_backends
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/core/checks/database.py", line 13, in check_database_backends
+        issues.extend(conn.validation.check(**kwargs))issues.extend(conn.validation.check(**kwargs))
+
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/validation.py", line 9, in check
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/validation.py", line 9, in check
+        issues.extend(self._check_sql_mode(**kwargs))issues.extend(self._check_sql_mode(**kwargs))
+
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/validation.py", line 14, in _check_sql_mode
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/validation.py", line 14, in _check_sql_mode
+        self.connection.sql_mode & {"STRICT_TRANS_TABLES", "STRICT_ALL_TABLES"}self.connection.sql_mode & {"STRICT_TRANS_TABLES", "STRICT_ALL_TABLES"}
+
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+        res = instance.__dict__[self.name] = self.func(instance)res = instance.__dict__[self.name] = self.func(instance)
+
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/base.py", line 448, in sql_mode
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/base.py", line 448, in sql_mode
+        sql_mode = self.mysql_server_data["sql_mode"]sql_mode = self.mysql_server_data["sql_mode"]
+
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+        res = instance.__dict__[self.name] = self.func(instance)res = instance.__dict__[self.name] = self.func(instance)
+
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/base.py", line 404, in mysql_server_data
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/base.py", line 404, in mysql_server_data
+        with self.temporary_connection() as cursor:with self.temporary_connection() as cursor:
+
+  File "/home/l/loshga99/.local/lib/python3.12/contextlib.py", line 137, in __enter__
+  File "/home/l/loshga99/.local/lib/python3.12/contextlib.py", line 137, in __enter__
+        return next(self.gen)return next(self.gen)
+
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 695, in temporary_connection
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 695, in temporary_connection
+        with self.cursor() as cursor:with self.cursor() as cursor:
+
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+        return func(*args, **kwargs)return func(*args, **kwargs)
+
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 320, in cursor
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 320, in cursor
+        return self._cursor()return self._cursor()
+
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+        self.ensure_connection()self.ensure_connection()
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+        return func(*args, **kwargs)return func(*args, **kwargs)
+
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+        self.connect()self.connect()
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+        return func(*args, **kwargs)return func(*args, **kwargs)
+
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 258, in connect
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 258, in connect
+        self.init_connection_state()self.init_connection_state()
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/base.py", line 266, in init_connection_state
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/mysql/base.py", line 266, in init_connection_state
+        super().init_connection_state()super().init_connection_state()
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 225, in init_connection_state
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 225, in init_connection_state
+        self.check_database_version_supported()self.check_database_version_supported()
+
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 201, in check_database_version_supported
+  File "/home/l/loshga99/myenv/lib/python3.12/site-packages/django/db/backends/base/base.py", line 201, in check_database_version_supported
+        raise NotSupportedError(raise NotSupportedError(
+
+django.db.utilsdjango.db.utils..NotSupportedErrorNotSupportedError: : MySQL 8.0.11 or later is required (found 5.7.21).MySQL 8.0.11 or later is required (found 5.7.21).
+
+[CommandError: Unable to serialize database: (1146, "Table 'loshga99_design.django_admin_log' doesn't exist")
+CommandError: Unable to serialize database: (1146, "Table 'loshga99_design.django_admin_log' doesn't exist")
+System check identified some issues:
+
+WARNINGS:
+?: (mysql.W002) MySQL Strict Mode is not set for database connection 'default'
+	HINT: MySQL's Strict Mode fixes many data integrity problems in MySQL, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/5.2/ref/databases/#mysql-sql-mode
+System check identified some issues:
+
+WARNINGS:
+?: (mysql.W002) MySQL Strict Mode is not set for database connection 'default'
+	HINT: MySQL's Strict Mode fixes many data integrity problems in MySQL, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/5.2/ref/databases/#mysql-sql-mode
+Operations to perform:
+  Apply all migrations: admin, auth, backend_api, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying backend_api.0001_initial... OK
+  Applying backend_api.0002_alter_testimonial_image... OK
+  Applying backend_api.0003_project_projectimage_projectimagepanorama... OK
+  Applying sessions.0001_initial... OK
+order@alldesignkhv.ru (147369fgH+)
+Username (leave blank to use 'loshga99'): Email address: Superuser created successfully.

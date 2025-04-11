@@ -16,15 +16,42 @@ class TestimonialSerializer(serializers.ModelSerializer):
         return None
     
 
+#class ProjectImageSerializer(serializers.ModelSerializer):
+#    class Meta:
+#        model = ProjectImage
+#        fields = ['image']
+        
 class ProjectImageSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+    
     class Meta:
         model = ProjectImage
-        fields = ['image']
+        fields = ['id', 'image', 'image_url']
+    
+    def get_image_url(self, obj):
+        if obj.image:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+            return obj.image.url
+        return None
+
+#class ProjectImagePanoramaSerializer(serializers.ModelSerializer):
+#    class Meta:
+#        model = ProjectImagePanorama
+#        fields = ['image', 'name']
 
 class ProjectImagePanoramaSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+    
     class Meta:
         model = ProjectImagePanorama
-        fields = ['image', 'name']
+        fields = ['id', 'image', 'name', 'image_url']
+    
+    def get_image_url(self, obj):
+        if obj.image:
+            return f"https://alldesignkhv.store{obj.image.url}"
+        return None
 
 class ProjectSerializer(serializers.ModelSerializer):
     images = ProjectImageSerializer(many=True, read_only=True)

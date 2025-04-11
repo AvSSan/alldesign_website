@@ -13,5 +13,7 @@ router.register(r'projects', ProjectViewSet)
 urlpatterns = [
     path('testimonials/', TestimonialListAPIView.as_view(), name='testimonials'),
     path('order/', SendDesignRequestView.as_view(), name='send_design_request'),
+    path('ordertest/', message_consume),
+    path('test/', test_view),
     path('', include(router.urls)),
 ]
