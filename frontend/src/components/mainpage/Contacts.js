@@ -48,9 +48,6 @@ const Contacts = () => {
             <a href='https://t.me/Alldesignkhv' aria-label="Telegram">
               <FaTelegramPlane className={styles.icon} />
             </a>
-            <a href='https://instagram.com/alldesign_khv' aria-label="Instagram">
-              <FaInstagram className={styles.icon} />
-            </a>
           </div>
         </div>
       </div>
