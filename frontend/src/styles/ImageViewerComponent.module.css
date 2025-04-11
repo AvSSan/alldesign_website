@@ -2,48 +2,171 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+  }
+  
+  .mainImageContainer {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
   .mainImage {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 10px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .mainImageContainer:hover .mainImage {
+    transform: scale(1.02);
+  }
+  
+  .imageOverlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .navButton {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(2px);
+  }
+  
+  .navButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+  }
+  
+  .prevButton, .nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .prevButton {
+    left: 15px;
+  }
+  
+  .nextButton {
+    right: 15px;
+  }
+  
+  .dotsContainer {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+  
+  .dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .activeDot {
+    background-color: white;
+    transform: scale(1.2);
   }
   
   .thumbnailContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     overflow-x: auto;
+    width: 100%;
     max-width: 600px;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+  }
+  
+  .thumbnailContainer::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .thumbnailContainer::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .thumbnailContainer::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: transparent;
   }
   
   .thumbnailWrapper {
     width: 100px;
     height: 100px;
+    border-radius: 4px;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+    border: 2px solid transparent;
+  }
+  
+  .thumbnailWrapper:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+  }
+  
+  .activeThumbnail {
+    border: 2px solid #000;
+    opacity: 1;
   }
   
   .thumbnailImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
   }
 
 @media (max-width: 1024px) {
-  .mainImage {
-    width: 100%;
+  .mainImageContainer {
     max-width: 500px;
     height: 500px;
-    object-fit: cover;
   }
   
   .thumbnailContainer {
@@ -54,14 +177,23 @@
     width: 90px;
     height: 90px;
   }
+  
+  .navButton {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .prevButton, .nextButton {
+    width: 45px;
+    height: 45px;
+  }
 }
 
 @media (max-width: 768px) {
-  .mainImage {
+  .mainImageContainer {
     width: 100%;
     max-width: 100%;
     height: 400px;
-    object-fit: cover;
   }
   
   .imageViewerContainer {
@@ -70,7 +202,7 @@
   
   .thumbnailContainer {
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 10px 10px;
     box-sizing: border-box;
     justify-content: flex-start;
   }
@@ -79,14 +211,23 @@
     width: 80px;
     height: 80px;
   }
+  
+  .navButton {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .prevButton, .nextButton {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media (max-width: 480px) {
-  .mainImage {
+  .mainImageContainer {
     width: 100%;
     max-width: 100%;
-    height: auto;
-    max-height: 350px;
+    height: 350px;
   }
 
   .imageViewerContainer {
@@ -97,7 +238,7 @@
   
   .thumbnailContainer {
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 10px 10px;
     box-sizing: border-box;
   }
   
@@ -109,6 +250,21 @@
   .thumbnailImage {
     width: 100%;
     height: 100%;
+  }
+  
+  .navButton {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .prevButton, .nextButton {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
   }
 }
 
