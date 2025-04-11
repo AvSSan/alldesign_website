@@ -112,7 +112,7 @@ const Order = () => {
           </label>
         </div>
         <button type="submit" className={styles.submitButton} disabled={submitStatus === 'sending'}>
-          {submitStatus === 'sending' ? 'Отправка...' : 'Отправить заявку'}
+          <span>{submitStatus === 'sending' ? 'Отправка...' : 'Отправить'}</span>
         </button>
         {submitStatus === 'success' && <p className={styles.successMessage}>Заявка успешно отправлена!</p>}
         {submitStatus === 'error' && <p className={styles.errorMessage}>Произошла ошибка при отправке. Попробуйте еще раз.</p>}

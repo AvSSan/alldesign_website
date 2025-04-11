@@ -175,22 +175,45 @@
   }
   
   .requestButton {
-    background-color: #000;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 6px;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 0;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 1px;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .requestButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    z-index: 0;
+  }
+  
+  .requestButton span {
+    position: relative;
+    z-index: 2;
   }
   
   .requestButton:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  
+  .requestButton:hover::before {
+    left: 0;
   }
   
   /* Адаптивные стили */
@@ -226,8 +249,8 @@
     }
     
     .requestButton {
-      padding: 12px 25px;
-      font-size: 0.9rem;
+      padding: 10px 25px;
+      font-size: 14px;
     }
   }
   
@@ -280,8 +303,9 @@
     
     .requestButton {
       width: 100%;
-      padding: 12px 20px;
-      font-size: 0.85rem;
+      padding: 10px 20px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
     }
     
     .socialLink {

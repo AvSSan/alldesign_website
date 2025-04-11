@@ -68,7 +68,7 @@ const ContactOverlay = () => {
             <p>Хотите создать проект вашей мечты?</p>
             <a href='/order'>
               <button className={styles.requestButton}>
-                ОСТАВИТЬ ЗАЯВКУ
+                <span>Оставить заявку</span>
               </button>
             </a>
           </div>

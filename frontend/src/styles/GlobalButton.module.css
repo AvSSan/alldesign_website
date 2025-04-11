@@ -1,0 +1,112 @@
+.button {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  z-index: 0;
+}
+
+.button span {
+  position: relative;
+  z-index: 2;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button:hover::before {
+  left: 0;
+}
+
+/* Варианты кнопок */
+.dark {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+.dark:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+.dark::before {
+  background-color: transparent;
+}
+
+/* Размеры кнопок */
+.small {
+  padding: 8px 20px;
+  font-size: 13px;
+}
+
+.medium {
+  padding: 12px 28px;
+  font-size: 15px;
+}
+
+.large {
+  padding: 15px 35px;
+  font-size: 16px;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+  .button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+  
+  .small {
+    padding: 6px 18px;
+    font-size: 12px;
+  }
+  
+  .large {
+    padding: 12px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+  
+  .small {
+    padding: 5px 15px;
+    font-size: 11px;
+  }
+  
+  .large {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+} 

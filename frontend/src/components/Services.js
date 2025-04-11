@@ -125,7 +125,7 @@ const Services = () => {
                   <li key={itemIndex}>{item}</li>
                 ))}
               </ul>
-              <a href='/order'><button className={styles.orderButton}>ЗАКАЗАТЬ</button></a>
+              <a href='/order'><button className={styles.orderButton}><span>ЗАКАЗАТЬ</span></button></a>
             </div>
           ))}
         </div>

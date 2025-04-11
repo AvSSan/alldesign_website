@@ -8,7 +8,9 @@ const ProjectCarouselCard = ({ id, image, title }) => {
         <div className={styles.imageContainer}>
           <img src={image} alt={title} className={styles.image} loading="lazy" />
           <div className={styles.overlay}>
-            <span className={styles.viewButton}>Смотреть проект</span>
+            <button className={styles.viewButton}>
+              <span>Смотреть проект</span>
+            </button>
           </div>
         </div>
         <div className={styles.titleContainer}>

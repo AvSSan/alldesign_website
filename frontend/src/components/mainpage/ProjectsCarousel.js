@@ -161,7 +161,7 @@ const ProjectCarousel = () => {
       </div>
       <a href="/projects/">
         <button className={styles.button}>
-          Все проекты
+          <span>Все проекты</span>
         </button>
       </a>
     </div>

@@ -94,8 +94,12 @@ class ProjectCard extends React.Component {
                 <h3 className={styles.sectionTitle}>Панорамы</h3>
                 <div className={styles.panoramaButtons}>
                     {project.panoramas.map((panorama, index) => (
-                        <button className={styles.panoramaButton} key={index} onClick={() => this.handlePanoramaClick(panorama)}>
-                            {panorama.name}
+                        <button 
+                            className={styles.panoramaButton} 
+                            key={index} 
+                            onClick={() => this.handlePanoramaClick(panorama)}
+                        >
+                            <span>{panorama.name}</span>
                         </button>
                     ))}
                 </div>
@@ -120,7 +124,7 @@ class ProjectCard extends React.Component {
                     <div className={styles.errorIcon}>!</div>
                     <h2 className={styles.errorTitle}>Произошла ошибка</h2>
                     <p className={styles.errorMessage}>Не удалось загрузить проект. Пожалуйста, попробуйте позже.</p>
-                    <a href="/projects" className={styles.backButton}>Вернуться к проектам</a>
+                    <a href="/projects" className={styles.backButton}><span>Вернуться к проектам</span></a>
                 </div>
             );
         }
@@ -131,7 +135,7 @@ class ProjectCard extends React.Component {
                     <div className={styles.errorIcon}>?</div>
                     <h2 className={styles.errorTitle}>Проект не найден</h2>
                     <p className={styles.errorMessage}>Запрашиваемый проект не существует или был удален.</p>
-                    <a href="/projects" className={styles.backButton}>Вернуться к проектам</a>
+                    <a href="/projects" className={styles.backButton}><span>Вернуться к проектам</span></a>
                 </div>
             );
         }
