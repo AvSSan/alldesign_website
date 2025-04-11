@@ -74,6 +74,11 @@
     right: 15px;
   }
   
+  .prevButton:hover, .nextButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
   .dotsContainer {
     position: absolute;
     bottom: 15px;
