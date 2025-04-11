@@ -1,0 +1,39 @@
+/* Кастомные стили для админки */
+#header {
+    background: #1e3c72;
+    color: white;
+}
+
+.module h2, .module caption {
+    background: #2a5298;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #4CAF50;
+}
+
+/* Улучшение списков объектов */
+#changelist-filter h2 {
+    background: #2a5298;
+}
+
+/* Улучшение формы редактирования */
+.inline-related h3 {
+    background: #2a5298;
+    color: white;
+    padding: 8px;
+    border-radius: 4px 4px 0 0;
+}
+
+.inline-related {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Для миниатюр */
+.field-image_preview img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+}
