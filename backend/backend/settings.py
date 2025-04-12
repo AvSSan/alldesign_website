@@ -15,17 +15,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 
 DEBUG = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.beget.com'
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'order@alldesignkhv.ru')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '(147369fgH+)')
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-print(EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
-
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
@@ -114,10 +103,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'loshga99_design',
-        'USER': 'loshga99_design',
-        'PASSWORD': '(147369fgH+)',
-        'HOST': 'localhost',
+        'NAME': os.environ.get('DATABASE_NAME', ''),
+        'USER': os.environ.get('DATABASE_USER', ''),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
+        'HOST': os.environ.get('DATABASE_HOST', ''),
         'OPTIONS': {
             'charset': 'utf8mb4',
             'use_unicode': True,
@@ -141,8 +130,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -151,14 +138,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
-STATIC_URL = 'static/'
-STATIC_ROOT = '/home/l/loshga99/loshga99.beget.tech/backend/static/'
-
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 LOGGING = {
     'version': 1,
@@ -187,7 +167,7 @@ LOGGING = {
         },
     },
     'loggers': {
-        '': {  # This is the root logger
+        '': {
             'handlers': ['file', 'console'],
             'level': 'DEBUG',
         },
