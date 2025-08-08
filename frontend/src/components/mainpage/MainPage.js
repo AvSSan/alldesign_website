@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import companyLogo from '../../static_files/logo.png';
+import companyLogo from '../../static_files/logo.webp';
 import BlackLogo from './BlackLogo';
 import Slider from './Slider';
 import AboutUs from './AboutUs';

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Filler.module.css';
-import fillerImg from '../../static_files/blackmarble.png';
+import fillerImg from '../../static_files/blackmarble.webp';
 import BriefInfo from './BriefInfo';
 
 const Filler = () => {

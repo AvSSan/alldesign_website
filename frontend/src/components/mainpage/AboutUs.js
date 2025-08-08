@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/AboutUs.module.css';
-import image from '../../static_files/miheev.jpg';
+import image from '../../static_files/miheev.webp';
 
 
 const AboutUs = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/DesktopHeader.module.css';
-import companyLogo from '../static_files/logo.png';
+import companyLogo from '../static_files/logo.webp';
 
 const DesktopHeader = () => {
   return (

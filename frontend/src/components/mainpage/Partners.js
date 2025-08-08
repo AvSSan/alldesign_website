@@ -3,12 +3,12 @@ import Slider from 'react-slick';
 import styles from '../../styles/Partners.module.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import one from '../../static_files/partners/one.png'
-import two from '../../static_files/partners/two.png'
-import three from '../../static_files/partners/three.png'
-import four from '../../static_files/partners/four.png'
-import five from '../../static_files/partners/five.png'
-import six from '../../static_files/partners/six.png'
+import one from '../../static_files/partners/one.webp'
+import two from '../../static_files/partners/two.webp'
+import three from '../../static_files/partners/three.webp'
+import four from '../../static_files/partners/four.webp'
+import five from '../../static_files/partners/five.webp'
+import six from '../../static_files/partners/six.webp'
 
 const Partners = () => {
     const settings = {

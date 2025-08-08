@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/MobileHeader.module.css';
 import { Menu, X } from 'lucide-react';
-import companyLogo from '../static_files/logo.png';
+import companyLogo from '../static_files/logo.webp';
 
 const MobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

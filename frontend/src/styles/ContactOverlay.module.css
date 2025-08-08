@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('../static_files/map.png');
+    background-image: url('../static_files/map.webp');
     background-size: cover;
     background-position: center;
     display: flex;

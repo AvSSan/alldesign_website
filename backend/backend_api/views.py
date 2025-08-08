@@ -1,20 +1,14 @@
-from django.shortcuts import render
 from .models import *
-from django.http import HttpResponse
 from rest_framework import generics, viewsets, permissions, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.shortcuts import get_object_or_404
 from .models import Testimonial, Project
 from .serializers import TestimonialSerializer, ProjectSerializer, ProjectImageSerializer, ProjectImagePanoramaSerializer, ImplementationSerializer, ImplementationStageSerializer, ImplementationMediaSerializer
-from rest_framework.permissions import IsAuthenticated
-
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.http import require_POST
 import json
-
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator

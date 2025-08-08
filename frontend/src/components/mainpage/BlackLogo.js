@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/BlackLogo.module.css';
-import blackCompanyLogo from '../../static_files/blacklogo.png';
+import blackCompanyLogo from '../../static_files/blacklogo.webp';
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Contacts.module.css';
 import { FaWhatsapp, FaTelegramPlane, FaInstagram, FaMapMarkerAlt } from 'react-icons/fa';
-import companyLogo from '../../static_files/logo.png';
+import companyLogo from '../../static_files/logo.webp';
 
 const Contacts = () => {
   const currentYear = new Date().getFullYear();

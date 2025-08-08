@@ -1,6 +1,6 @@
 import styles from '../../styles/portfolio_examples.module.css';
-import tempImg from '../../static_files/example1.png';
-import tempImg2 from '../../static_files/example2.png';
+import tempImg from '../../static_files/example1.webp';
+import tempImg2 from '../../static_files/example2.webp';
 import InteriorDesignCard from './InteriorDesignCard';
 
 export default function PortfolioExamples() {

@@ -17,20 +17,23 @@ except ImportError:
     PANORAMA_IMAGE_MAX_WIDTH, PANORAMA_IMAGE_MAX_HEIGHT, PANORAMA_IMAGE_QUALITY = 2560, 1440, 90
     TESTIMONIAL_IMAGE_MAX_WIDTH, TESTIMONIAL_IMAGE_MAX_HEIGHT, TESTIMONIAL_IMAGE_QUALITY = 800, 800, 85
 
+# Утилита: берём "длинную сторону" из пары (width, height)
+def _side(w, h):
+    return max(int(w), int(h))
+
 # Create your models here.
 class Testimonial(models.Model):
     image = models.ImageField(upload_to='images/testimonials')
     text = models.TextField()
     name = models.CharField(max_length=100)
-    
+
     def save(self, *args, **kwargs):
-        # Сжатие изображения отзыва с использованием параметров из настроек
         if self.image:
+            # новая сигнатура compress_image(..., max_side=..., quality=...)
             self.image = compress_image(
-                self.image, 
-                max_width=TESTIMONIAL_IMAGE_MAX_WIDTH, 
-                max_height=TESTIMONIAL_IMAGE_MAX_HEIGHT, 
-                quality=TESTIMONIAL_IMAGE_QUALITY
+                self.image,
+                max_side=_side(TESTIMONIAL_IMAGE_MAX_WIDTH, TESTIMONIAL_IMAGE_MAX_HEIGHT),
+                quality=TESTIMONIAL_IMAGE_QUALITY,
             )
         super().save(*args, **kwargs)
 
@@ -39,7 +42,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
     description = models.TextField()
-    room_parameters = models.JSONField()  # Для хранения параметров помещения в формате JSON
+    room_parameters = models.JSONField()
 
     def __str__(self):
         return self.title
@@ -50,15 +53,13 @@ class ProjectImage(models.Model):
 
     def __str__(self):
         return f"Image for project: {self.project.title}"
-    
+
     def save(self, *args, **kwargs):
-        # Сжатие изображения проекта с использованием параметров из настроек
         if self.image:
             self.image = compress_image(
-                self.image, 
-                max_width=PROJECT_IMAGE_MAX_WIDTH, 
-                max_height=PROJECT_IMAGE_MAX_HEIGHT, 
-                quality=PROJECT_IMAGE_QUALITY
+                self.image,
+                max_side=_side(PROJECT_IMAGE_MAX_WIDTH, PROJECT_IMAGE_MAX_HEIGHT),
+                quality=PROJECT_IMAGE_QUALITY,
             )
         super().save(*args, **kwargs)
     
@@ -69,15 +70,13 @@ class ProjectImagePanorama(models.Model):
 
     def __str__(self):
         return f"Panorama image for project: {self.project.title}"
-        
+
     def save(self, *args, **kwargs):
-        # Сжатие панорамного изображения с использованием параметров из настроек
         if self.image:
             self.image = compress_image(
-                self.image, 
-                max_width=PANORAMA_IMAGE_MAX_WIDTH, 
-                max_height=PANORAMA_IMAGE_MAX_HEIGHT, 
-                quality=PANORAMA_IMAGE_QUALITY
+                self.image,
+                max_side=_side(PANORAMA_IMAGE_MAX_WIDTH, PANORAMA_IMAGE_MAX_HEIGHT),
+                quality=PANORAMA_IMAGE_QUALITY,
             )
         super().save(*args, **kwargs)
 
@@ -102,9 +101,8 @@ class Implementation(models.Model):
         if self.main_image:
             self.main_image = compress_image(
                 self.main_image,
-                max_width=PROJECT_IMAGE_MAX_WIDTH,
-                max_height=PROJECT_IMAGE_MAX_HEIGHT,
-                quality=PROJECT_IMAGE_QUALITY
+                max_side=_side(PROJECT_IMAGE_MAX_WIDTH, PROJECT_IMAGE_MAX_HEIGHT),
+                quality=PROJECT_IMAGE_QUALITY,
             )
         super().save(*args, **kwargs)
 
@@ -234,8 +232,7 @@ class ImplementationMedia(models.Model):
         if self.media_type == 'image' and self.file:
             self.file = compress_image(
                 self.file,
-                max_width=PROJECT_IMAGE_MAX_WIDTH,
-                max_height=PROJECT_IMAGE_MAX_HEIGHT,
-                quality=PROJECT_IMAGE_QUALITY
+                max_side=_side(PROJECT_IMAGE_MAX_WIDTH, PROJECT_IMAGE_MAX_HEIGHT),
+                quality=PROJECT_IMAGE_QUALITY,
             )
         super().save(*args, **kwargs)
