@@ -173,7 +173,6 @@ export default function ImageViewerComponent({ urls }) {
               </>
             )}
             
-            {/* Индикатор свайпа для сенсорных устройств */}
             {isTouchDevice && images.length > 1 && (
               <div className={styles.swipeHint}>
                 <div className={styles.swipeHintContent}>

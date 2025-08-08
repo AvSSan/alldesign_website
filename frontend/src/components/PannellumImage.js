@@ -12,7 +12,6 @@ const PannellumImage = ({ url }) => {
     setError(null);
   }, [url]);
 
-  // Более простое решение с использованием iframe
   const onIframeLoad = () => {
     console.log('iframe загружен');
     setIsLoading(false);
@@ -25,8 +24,6 @@ const PannellumImage = ({ url }) => {
     setIsLoading(false);
   };
 
-  // Создаем HTML для iframe, который будет содержать панораму
-  // Используем простой HTML и параметры для настройки панорамы
   const iframeContent = `
     <!DOCTYPE HTML>
     <html>
@@ -138,7 +135,6 @@ const PannellumImage = ({ url }) => {
   `;
 
   useEffect(() => {
-    // Обработчик сообщений от iframe
     const handleMessage = (event) => {
       if (event.data === 'pannellum_loaded') {
         setIsLoading(false);
@@ -155,7 +151,6 @@ const PannellumImage = ({ url }) => {
     };
   }, []);
 
-  // Если есть ошибка, показываем ее пользователю
   if (error) {
     return (
       <div style={{ 

@@ -1,0 +1,57 @@
+.success-message {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+    border-radius: 4px;
+}
+
+.inline-related {
+    margin-bottom: 20px;
+}
+
+.inline-related .form-row {
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.form-row input[type="url"] {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-row select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.video-preview {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.video-preview iframe {
+    max-width: 100%;
+    border: none;
+}
+
+.field-video_preview {
+    margin-top: 10px;
+}
+
+/* Стили для превью изображений */
+.field-file_preview img {
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+} 

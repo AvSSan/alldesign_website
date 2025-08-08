@@ -51,6 +51,9 @@ const MobileHeader = () => {
                 <a href="/projects/" className={styles.menuLink} onClick={closeMenu}>Работы</a>
               </li>
               <li className={styles.menuItem}>
+                <a href="/implementation" className={styles.menuLink} onClick={closeMenu}>Реализация</a>
+              </li>
+              <li className={styles.menuItem}>
                 <a href="/services" className={styles.menuLink} onClick={closeMenu}>Услуги</a>
               </li>
               <li className={styles.menuItem}>

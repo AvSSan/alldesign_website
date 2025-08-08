@@ -1,0 +1,191 @@
+.pageWrapper {
+  padding: 2rem 0;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  color: #333;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.projectCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.projectImageContainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 66.67%; /* Соотношение сторон 3:2 */
+  overflow: hidden;
+  background-color: #f0f0f0; /* Цвет фона для пустого контейнера */
+}
+
+.projectImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  z-index: 1; /* Обеспечиваем, что изображение показывается поверх других элементов */
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05); /* Небольшое увеличение при наведении */
+}
+
+.projectOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 2; /* Оверлей должен быть выше изображения */
+}
+
+.projectCard:hover .projectOverlay {
+  transform: translateY(0);
+}
+
+.stagesPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stageItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.stageName {
+  font-weight: bold;
+}
+
+.stageDate {
+  opacity: 0.8;
+}
+
+.projectInfo {
+  padding: 1.5rem;
+  text-decoration: none;
+}
+
+.projectTitleLink {
+  text-decoration: none;
+}
+
+.projectTitle {
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.projectDescription {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.projectProgress {
+  margin-top: 1rem;
+}
+
+.progressBar {
+  height: 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: 0.9rem;
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+.error {
+  text-align: center;
+  color: #dc3545;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCard {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 1.75rem;
+    margin: 1rem 0;
+  }
+
+  .projectInfo {
+    padding: 1rem;
+  }
+
+  .projectTitle {
+    font-size: 1.2rem;
+  }
+
+  .projectDescription {
+    font-size: 0.9rem;
+  }
+} 

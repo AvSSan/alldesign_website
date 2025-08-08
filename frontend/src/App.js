@@ -15,6 +15,8 @@ import TestForm from './components/TestForm';
 import UnderDevelopment from './components/UnderDevelopment';
 import Privacy from './components/Privacy';
 import Services from './components/Services';
+import ImplementationPage from './components/ImplementationPage';
+import ImplementationProject from './components/ImplementationProject';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -31,6 +33,8 @@ function App() {
         <Route path="/test" element={<TestForm />} />
         <Route path="/services" element={<Services />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/implementation" element={<ImplementationPage />} />
+        <Route path="/implementation/:id" element={<ImplementationProject />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

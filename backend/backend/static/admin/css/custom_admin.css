@@ -1,0 +1,77 @@
+/* Стили для выделения обязательных полей */
+.field-title label,
+.field-description label,
+.field-start_date label {
+    color: #d32f2f !important;
+    font-weight: bold !important;
+}
+
+.field-title label:after,
+.field-description label:after,
+.field-start_date label:after {
+    content: " *";
+    color: #d32f2f;
+}
+
+/* Стили для заголовков этапов */
+.stage-header {
+    background-color: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-left: 4px solid #2196F3;
+    transition: all 0.3s ease;
+}
+
+.stage-header:hover {
+    background-color: #f0f0f0;
+}
+
+.stage-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.collapse-icon {
+    font-size: 14px;
+    color: #777;
+    margin-left: 10px;
+}
+
+.completed-badge {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-left: 8px;
+}
+
+/* Улучшенный стиль для стадии */
+.ImplementationStageInline {
+    margin-bottom: 15px !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.ImplementationStageInline .djn-tbody {
+    padding: 15px;
+    background-color: white;
+}
+
+/* Улучшение стиля для ImplementationMediaInline */
+.ImplementationMediaInline {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border-left: 3px solid #9E9E9E;
+} 

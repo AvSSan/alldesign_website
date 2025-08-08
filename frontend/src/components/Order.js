@@ -40,7 +40,7 @@ const Order = () => {
     setErrorMessage('');
 
     try {
-      const response = await axios.post('https://alldesignkhv.store/api/order/', formData, {
+      const response = await axios.post('https://alldesignkhv.store/order/', formData, {
         headers: {
           'Content-Type': 'application/json',
         },

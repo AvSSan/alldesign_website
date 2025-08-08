@@ -17,7 +17,6 @@ const Privacy = () => {
       });
   }, []);
 
-  // Разбиваем текст политики на разделы
   const renderFormattedPolicy = () => {
     if (!policyContent) return <p>Загрузка...</p>;
 

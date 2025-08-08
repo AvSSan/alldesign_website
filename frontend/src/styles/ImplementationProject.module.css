@@ -1,0 +1,843 @@
+/* Page Layout */
+.pageWrapper {
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+  margin-top: 0;
+  top: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  color: white;
+}
+
+.projectTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.projectMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Project Description */
+.projectDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #444;
+  max-width: 800px;
+}
+
+/* Progress Bar */
+.progressContainer {
+  margin-bottom: 2rem;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #eaeaea;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  color: #000;
+}
+
+.sectionTitle:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #4CAF50;
+}
+
+/* Roadmap */
+.roadmapSection {
+  margin-bottom: 2.5rem;
+}
+
+.roadmap {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: 1rem 0;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 20px 0 5px;
+  scrollbar-width: thin;  /* Firefox */
+  scrollbar-color: #c1c1c1 #f1f1f1;  /* Firefox */
+  -webkit-overflow-scrolling: touch;  /* iOS smooth scrolling */
+}
+
+.roadmap::-webkit-scrollbar {
+  height: 6px;
+}
+
+.roadmap::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.roadmap::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.roadmap::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.roadmapItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 180px;
+  max-width: 220px;
+  flex: 1;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 12px 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-top: 3px solid #e0e0e0;
+  margin-top: 5px;
+  overflow: visible;
+}
+
+.roadmapItem.completed {
+  border-top-color: #4CAF50;
+}
+
+.roadmapItem.active {
+  border-top-color: #2196F3;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  margin-top: 0;
+}
+
+.roadmapItem:hover:not(.active) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.roadmapPoint {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.roadmapItem.completed .roadmapPoint {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}
+
+.roadmapItem.active .roadmapPoint {
+  background-color: #2196F3;
+  border-color: #2196F3;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+.roadmapContent {
+  padding-top: 2px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.roadmapTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  white-space: normal;
+}
+
+.roadmapDate {
+  font-size: 0.8rem;
+  color: #777;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Stage Detail Section */
+.stageDetailSection {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stageNavigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.stageInfo {
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.stageTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.stageDescription {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #e0e0e0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #555;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.navButton:first-child {
+  left: 0;
+}
+
+.navButton:last-child {
+  right: 0;
+}
+
+.navButton:hover {
+  background-color: #f5f5f5;
+  color: #2196F3;
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.navButton:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Media Container */
+.mediaContainer {
+  margin-top: 2rem;
+}
+
+.mediaContent {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background-color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.mediaImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .mediaImage {
+  transform: scale(1.02);
+}
+
+.imageControls {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageWrapper:hover .imageControls {
+  opacity: 1;
+}
+
+.imageControlButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(2px);
+}
+
+.imageControlButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.videoPreview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.playButtonWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.playButtonWrapper:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.playButton {
+  color: white;
+}
+
+.videoEmbed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.videoEmbed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.noThumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* Media Information and Navigation */
+.mediaInfo {
+  margin-bottom: 1.5rem;
+}
+
+.mediaTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.mediaDescription {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.mediaNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mediaNavButton {
+  background: white;
+  border: 1px solid #e0e0e0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #555;
+}
+
+.mediaNavButton:hover:not(:disabled) {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.mediaNavButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mediaPagination {
+  display: flex;
+  gap: 8px;
+}
+
+.paginationDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.paginationDot.active {
+  background-color: #2196F3;
+  transform: scale(1.2);
+}
+
+.noMedia {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+/* Error Message */
+.error {
+  text-align: center;
+  padding: 3rem;
+  color: #d32f2f;
+  font-size: 1.2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .projectTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSection {
+    height: 60vh;
+  }
+  
+  .stageDetailSection {
+    padding: 1.5rem;
+  }
+  
+  .playButtonWrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .playButton {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .projectTitle {
+    font-size: 2rem;
+  }
+  
+  .projectMeta {
+    gap: 1rem;
+  }
+  
+  .roadmapItem {
+    min-width: 150px;
+    padding: 10px 12px;
+  }
+  
+  .roadmapTitle {
+    font-size: 0.9rem;
+  }
+  
+  .roadmapDate {
+    font-size: 0.7rem;
+  }
+  
+  .stageInfo {
+    max-width: 60%;
+  }
+  
+  .stageTitle {
+    font-size: 1.4rem;
+  }
+  
+  .stageDetailSection {
+    padding: 1.25rem;
+  }
+  
+  .mediaTitle {
+    font-size: 1.3rem;
+  }
+  
+  .mediaDescription {
+    font-size: 1rem;
+  }
+  
+  .playButtonWrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .playButton {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .heroSection {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .heroOverlay {
+    padding: 1.5rem 0;
+  }
+  
+  .projectTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+  
+  .projectMeta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .projectDescription {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionTitle:after {
+    width: 40px;
+    height: 2px;
+    bottom: -8px;
+  }
+  
+  .stageNavigation {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .stageInfo {
+    order: -1;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0 3rem;
+  }
+  
+  .navButton {
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .roadmapItem {
+    min-width: 130px;
+    max-width: 180px;
+    padding: 8px 10px;
+    overflow: visible;
+  }
+  
+  .roadmapTitle {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.2;
+  }
+  
+  .roadmapDate {
+    font-size: 0.7rem;
+    margin-top: 3px;
+  }
+  
+  .stageDetailSection {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .stageTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stageDescription {
+    font-size: 1rem;
+  }
+  
+  .playButtonWrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .playButton {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .mediaNavigation {
+    gap: 1rem;
+  }
+  
+  .mediaNavButton {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .paginationDot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .progressInfo {
+    font-size: 0.8rem;
+  }
+  
+  .noMedia {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .roadmapPoint {
+    top: -9px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .roadmapItem.active .roadmapPoint {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  }
+  
+  .imageControlButton {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Добавляем стили для очень маленьких экранов */
+@media (max-width: 375px) {
+  .projectTitle {
+    font-size: 1.5rem;
+  }
+  
+  .metaItem {
+    font-size: 1rem;
+  }
+  
+  .stageTitle {
+    font-size: 1.2rem;
+  }
+  
+  .roadmapItem {
+    min-width: 110px;
+    max-width: 150px;
+    overflow: visible;
+  }
+  
+  .mediaTitle {
+    font-size: 1.2rem;
+  }
+  
+  .mediaDescription {
+    font-size: 1rem;
+  }
+  
+  .navButton {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .playButtonWrapper {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .playButton {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .roadmapPoint {
+    top: -8px;
+    width: 16px;
+    height: 16px;
+    left: 12px;
+  }
+  
+  .stageNavigation {
+    padding: 0 0.5rem;
+  }
+  
+  .stageInfo {
+    padding: 0 2.5rem;
+  }
+  
+  .imageControlButton {
+    width: 32px;
+    height: 32px;
+  }
+} 

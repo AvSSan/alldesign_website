@@ -57,6 +57,7 @@ export default function MainPage() {
                         <nav>
                             <ul>
                                 <li><a href="/projects/">РАБОТЫ</a></li>
+                                <li><a href="/implementation">РЕАЛИЗАЦИЯ</a></li>
                                 <li style={{whiteSpace: "nowrap"}}><a href="#aboutus">О НАС</a></li>   
                             </ul>
                         </nav>

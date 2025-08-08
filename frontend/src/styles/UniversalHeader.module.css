@@ -1,35 +1,46 @@
 .headerContainer {
   width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .desktopHeader {
   display: block;
+  padding-bottom: 2em;
 }
 
 .mobileHeader {
   display: none;
+  padding-bottom: 2em;
 }
 
 body:not(.mainPage) {
-  padding-top: 60px;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 @media (max-width: 1024px) {
   .desktopHeader {
     display: none;
+    padding-bottom: 2em;
   }
   
   .mobileHeader {
     display: block;
+    padding-bottom: 3em;
   }
   
   body:not(.mainPage) {
-    padding-top: 50px;
+    padding-top: 0;
+    margin-top: 0;
   }
 }
 
 @media (max-width: 480px) {
   body:not(.mainPage) {
-    padding-top: 45px;
+    padding-top: 0;
+    margin-top: 0;
   }
 } 

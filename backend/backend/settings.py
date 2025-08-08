@@ -7,7 +7,7 @@ pymysql.install_as_MySQLdb()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/l/loshga99/loshga99.beget.tech/backend/media/'
+MEDIA_ROOT = '/home/l/loshga99/alldesignkhv.ru/public_html/media/'
 
 load_dotenv()
 
@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'backend_api',
+    'nested_admin',
 ]
 
 MIDDLEWARE = [
@@ -130,11 +131,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+# Internationalization
+# https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'ru-ru'
+
+TIME_ZONE = 'Asia/Vladivostok'  # Меняем на часовой пояс Хабаровска
 
 USE_I18N = True
+
+USE_L10N = True  # Добавляем для корректного отображения дат
 
 USE_TZ = True
 
@@ -174,11 +180,27 @@ LOGGING = {
     },
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/l/loshga99/alldesignkhv.ru/public_html/static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+FILE_UPLOAD_HANDLERS = [
+    'django.core.files.uploadhandler.MemoryFileUploadHandler',
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+]
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
+FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600
+
+ALLOWED_VIDEO_TYPES = ['video/mp4', 'video/webm', 'video/ogg']
+ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+
+MAX_VIDEO_SIZE = 104857600  # 100MB
+MAX_IMAGE_SIZE = 10485760   # 10MB
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'

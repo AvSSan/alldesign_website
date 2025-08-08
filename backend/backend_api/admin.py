@@ -1,11 +1,16 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django import forms
-from .models import Project, ProjectImage, ProjectImagePanorama, Testimonial
+import nested_admin
+from django.conf import settings
+from django.core.exceptions import ValidationError
+from .models import (
+    Project, ProjectImage, ProjectImagePanorama, Testimonial,
+    Implementation, ImplementationStage, ImplementationMedia
+)
 from PIL import Image
 import os
 
-# Функция для получения информации о размере изображения
 def get_image_dimensions(image_field):
     if not image_field:
         return "-"
@@ -17,7 +22,6 @@ def get_image_dimensions(image_field):
     except Exception as e:
         return f"Ошибка: {str(e)}"
 
-# Улучшенный интерфейс для изображений проекта
 class ProjectImageInline(admin.TabularInline):
     model = ProjectImage
     extra = 1
@@ -37,7 +41,6 @@ class ProjectImageInline(admin.TabularInline):
         return "-"
     image_info.short_description = 'Размер изображения'
 
-# Улучшенный интерфейс для панорам
 class ProjectImagePanoramaInline(admin.TabularInline):
     model = ProjectImagePanorama
     extra = 1
@@ -57,7 +60,6 @@ class ProjectImagePanoramaInline(admin.TabularInline):
         return "-"
     image_info.short_description = 'Размер изображения'
 
-# Улучшенная форма проекта
 class ProjectForm(forms.ModelForm):
     area = forms.FloatField(required=False, label="Площадь (кв.м)")
     rooms = forms.IntegerField(required=False, label="Количество комнат")
@@ -95,7 +97,6 @@ class ProjectForm(forms.ModelForm):
             instance.save()
         return instance
 
-# Улучшенный интерфейс админа для проектов
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectForm
@@ -137,7 +138,6 @@ class ProjectAdmin(admin.ModelAdmin):
         return "Нет изображения"
     thumbnail.short_description = 'Превью'
 
-# Улучшенный интерфейс для отдельных изображений
 @admin.register(ProjectImage)
 class ProjectImageAdmin(admin.ModelAdmin):
     list_display = ('project', 'image_preview', 'image_info')
@@ -156,7 +156,6 @@ class ProjectImageAdmin(admin.ModelAdmin):
         return "-"
     image_info.short_description = 'Размер изображения'
 
-# Улучшенный интерфейс для панорам
 @admin.register(ProjectImagePanorama)
 class ProjectImagePanoramaAdmin(admin.ModelAdmin):
     list_display = ('project', 'name', 'image_preview', 'image_info')
@@ -175,7 +174,6 @@ class ProjectImagePanoramaAdmin(admin.ModelAdmin):
         return "-"
     image_info.short_description = 'Размер изображения'
 
-# Улучшенный интерфейс для отзывов
 @admin.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = ('name', 'short_text', 'image_preview', 'image_info')
@@ -199,3 +197,125 @@ class TestimonialAdmin(admin.ModelAdmin):
             return obj.text[:50] + '...'
         return obj.text
     short_text.short_description = 'Текст отзыва'
+
+class ImplementationMediaForm(forms.ModelForm):
+    class Meta:
+        model = ImplementationMedia
+        fields = ['media_type', 'title', 'description', 'file', 'video_url', 'order']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['file'].label = 'Файл (если выбран тип "Изображение")'
+        self.fields['file'].help_text = 'Загрузите изображение, если выбран тип "Изображение"'
+        self.fields['video_url'].label = 'Ссылка на видео (если выбран тип "Видео")'
+        self.fields['video_url'].help_text = 'Укажите ссылку на видео Rutube, если выбран тип "Видео"'
+
+class ImplementationMediaInline(nested_admin.NestedStackedInline):
+    model = ImplementationMedia
+    extra = 1
+    form = ImplementationMediaForm
+    
+    fields = [
+        'media_type',
+        'title',
+        'description',
+        'file',
+        'video_url',
+        'order'
+    ]
+
+    readonly_fields = ('file_preview', 'video_preview')
+
+    def file_preview(self, obj):
+        if obj and obj.file:
+            return mark_safe(f'<img src="{obj.file.url}" width="150" height="auto" />')
+        return "Нет файла"
+    file_preview.short_description = 'Предпросмотр файла'
+
+    def video_preview(self, obj):
+        if obj and obj.video_embed:
+            return mark_safe(obj.video_embed)
+        return "Нет видео"
+    video_preview.short_description = 'Предпросмотр видео'
+
+class ImplementationStageInline(nested_admin.NestedStackedInline):
+    model = ImplementationStage
+    extra = 1
+    fields = [
+        ('title', 'stage_type'),
+        'description',
+        ('start_date', 'end_date'),
+        ('is_completed', 'order')
+    ]
+    classes = ['collapsible']
+    inlines = [ImplementationMediaInline]
+    
+    def get_formset(self, request, obj=None, **kwargs):
+        formset = super().get_formset(request, obj, **kwargs)
+        form = formset.form
+        form.base_fields['title'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['title'].widget.attrs['placeholder'] = '* Обязательное поле'
+        form.base_fields['stage_type'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['description'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['description'].widget.attrs['placeholder'] = '* Обязательное поле'
+        form.base_fields['start_date'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['start_date'].widget.attrs['placeholder'] = '* Обязательное поле'
+        form.base_fields['order'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['order'].widget.attrs['placeholder'] = '* Обязательное поле'
+        return formset
+
+@admin.register(Implementation)
+class ImplementationAdmin(nested_admin.NestedModelAdmin):
+    list_display = ('title', 'location', 'area', 'start_date', 'end_date', 'is_completed', 'main_image_preview')
+    list_filter = ('is_completed', 'location')
+    search_fields = ('title', 'description', 'location')
+    fieldsets = (
+        ('Основная информация', {
+            'fields': ('title', 'description', 'location', 'area'),
+            'description': '<span style="color: #d32f2f;">* - обязательные поля</span>'
+        }),
+        ('Даты', {
+            'fields': ('start_date', 'end_date', 'is_completed')
+        }),
+        ('Изображение', {
+            'fields': ('main_image', 'main_image_preview'),
+        }),
+    )
+    readonly_fields = ['main_image_preview']
+    inlines = [ImplementationStageInline]
+    
+    class Media:
+        css = {
+            'all': ('admin/css/mobile_admin.css',)
+        }
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        form.base_fields['title'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['title'].widget.attrs['placeholder'] = '* Обязательное поле'
+        form.base_fields['description'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['description'].widget.attrs['placeholder'] = '* Обязательное поле'
+        form.base_fields['start_date'].widget.attrs['style'] = 'border: 1px solid #d32f2f;'
+        form.base_fields['start_date'].widget.attrs['placeholder'] = '* Обязательное поле'
+        return form
+
+    def main_image_preview(self, obj):
+        if obj.main_image:
+            return mark_safe(f'<img src="{obj.main_image.url}" width="150" height="auto" />')
+        return "Нет изображения"
+    main_image_preview.short_description = 'Предпросмотр главного изображения'
+
+@admin.register(ImplementationStage)
+class ImplementationStageAdmin(nested_admin.NestedModelAdmin):
+    list_display = ('title', 'implementation', 'stage_type', 'start_date', 'end_date', 'is_completed', 'order')
+    list_filter = ('stage_type', 'is_completed', 'implementation')
+    search_fields = ('title', 'description', 'implementation__title')
+    fieldsets = (
+        ('Основная информация', {
+            'fields': ('implementation', 'title', 'stage_type', 'description')
+        }),
+        ('Даты и статус', {
+            'fields': ('start_date', 'end_date', 'is_completed', 'order')
+        }),
+    )
+    inlines = [ImplementationMediaInline]

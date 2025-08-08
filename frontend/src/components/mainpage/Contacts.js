@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Contacts.module.css';
-import { FaWhatsapp, FaTelegramPlane, FaInstagram, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaTelegramPlane, FaInstagram, FaMapMarkerAlt } from 'react-icons/fa';
 import companyLogo from '../../static_files/logo.png';
 
 const Contacts = () => {
@@ -19,10 +19,6 @@ const Contacts = () => {
           <div className={styles.contactItem}>
             <FaMapMarkerAlt className={styles.contactIcon} />
             <p>г. Хабаровск, улица Блюхера 5, офис 207</p>
-          </div>
-          <div className={styles.contactItem}>
-            <FaEnvelope className={styles.contactIcon} />
-            <p>info@alldesignkhv.ru</p>
           </div>
           <div className={styles.contactItem}>
             <p className={styles.phone}>+7 909 872 87 57</p>

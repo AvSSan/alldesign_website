@@ -8,9 +8,8 @@
 .projectCard {
     display: flex;
     flex-direction: column;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 40px;
-    margin-top: 20px;
     max-width: 1200px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -350,7 +349,7 @@
     }
 
     .projectCard {
-        margin: 25px auto;
+        margin: 30px auto;
         padding: 25px;
         max-width: 90%;
         box-sizing: border-box;
@@ -390,6 +389,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .projectCard {
         padding: 30px;
+        margin: 30px auto;
     }
     
     .projectHeader:after {
@@ -399,7 +399,7 @@
 
 @media (max-width: 768px) {
     .projectCard {
-        margin: 20px auto;
+        margin: 30px auto;
         padding: 20px;
     }
 
@@ -451,7 +451,7 @@
     }
     
     .projectCard {
-        margin: 10px;
+        margin: 60px auto;
         padding: 15px;
         width: auto;
         max-width: 100%;
